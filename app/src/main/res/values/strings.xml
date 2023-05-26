@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Skinnie</string>
+    <string name="logo_skinnie">logo skinnie</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="dh_account">Don\'t have account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="create_account">Create Account</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="email">Email</string>
+</resources>
