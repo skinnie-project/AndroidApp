@@ -9,13 +9,15 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp">
 
         <ImageView
             android:id="@+id/logo_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
+            android:contentDescription="@string/logo_skinnie"
             android:src="@drawable/skinnie_logo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -93,5 +95,23 @@
             android:layout_marginStart="5dp"
             app:layout_constraintStart_toEndOf="@+id/tv_dh_account"
             app:layout_constraintTop_toTopOf="@+id/tv_dh_account" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_google"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/bg_btn_google"
+            android:drawablePadding="5dp"
+            android:paddingHorizontal="20dp"
+            android:text="@string/google"
+            android:textAllCaps="false"
+            android:textColor="@color/brown"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:drawableStart="@drawable/google"
+            app:layout_constraintEnd_toEndOf="@+id/et_password"
+            app:layout_constraintStart_toStartOf="@+id/et_password"
+            app:layout_constraintTop_toBottomOf="@+id/tv_dh_account" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
