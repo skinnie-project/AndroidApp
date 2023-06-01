@@ -1,4 +1,4 @@
-package com.company.skinnie.ui.ui.profile
+package com.company.skinnie.ui.profile
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

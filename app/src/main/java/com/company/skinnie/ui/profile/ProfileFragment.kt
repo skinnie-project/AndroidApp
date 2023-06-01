@@ -1,4 +1,4 @@
-package com.company.skinnie.ui.ui.profile
+package com.company.skinnie.ui.profile
 
 import android.os.Bundle
 import android.view.LayoutInflater
