@@ -37,7 +37,7 @@
             android:name=".ui.scan.InstructionActivity"
             android:exported="false" />
         <activity
-            android:name=".NavigationActivity"
+            android:name=".ui.NavigationActivity"
             android:exported="false"
             android:label="@string/title_activity_navigation">
             <meta-data

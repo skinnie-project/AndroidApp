@@ -1,4 +1,4 @@
-package com.company.skinnie.ui.ui.home
+package com.company.skinnie.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
