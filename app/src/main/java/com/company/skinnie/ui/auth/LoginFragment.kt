@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.company.skinnie.NavigationActivity
 import com.company.skinnie.databinding.FragmentLoginBinding
-import com.company.skinnie.ui.NavigationActivity
 
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
