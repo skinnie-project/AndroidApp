@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.saran.SaranActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="Saran dan Masukan"
+        app:titleMarginStart="55dp"
+        app:titleTextAppearance="@style/TitleToolbar" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/et_nama_saran"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_white"
+        android:hint="Masukkan Nama"
+        android:maxLines="1"
+        android:paddingHorizontal="20dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/brown"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar4" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/et_email_saran"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_white"
+        android:hint="Masukkan Email"
+        android:maxLines="1"
+        android:paddingHorizontal="20dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/brown"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/et_nama_saran"
+        app:layout_constraintStart_toStartOf="@+id/et_nama_saran"
+        app:layout_constraintTop_toBottomOf="@+id/et_nama_saran" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/et_saran"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_white"
+        android:hint="Saran dan Masukan"
+        android:inputType="textMultiLine"
+        android:paddingHorizontal="20dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/brown"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/et_email_saran"
+        app:layout_constraintStart_toStartOf="@+id/et_email_saran"
+        app:layout_constraintTop_toBottomOf="@+id/et_email_saran" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_kirim_saran"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_button"
+        android:paddingHorizontal="50dp"
+        android:text="Kirim"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/et_saran"
+        app:layout_constraintStart_toStartOf="@+id/et_saran"
+        app:layout_constraintTop_toBottomOf="@+id/et_saran" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
