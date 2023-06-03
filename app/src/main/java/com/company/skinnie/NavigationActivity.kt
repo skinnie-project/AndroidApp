@@ -8,6 +8,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.company.skinnie.databinding.ActivityNavigationBinding
 import com.company.skinnie.ui.scan.CameraActivity
+import com.company.skinnie.ui.scan.InstructionActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class NavigationActivity : AppCompatActivity() {
@@ -32,7 +33,7 @@ class NavigationActivity : AppCompatActivity() {
 
 
         binding.icScan.setOnClickListener {
-            val intent = Intent(this, CameraActivity::class.java)
+            val intent = Intent(this, InstructionActivity::class.java)
             startActivity(intent)
         }
     }
