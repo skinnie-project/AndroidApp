@@ -109,11 +109,45 @@
             app:layout_constraintStart_toEndOf="@+id/tv_dh_account"
             app:layout_constraintTop_toTopOf="@+id/tv_dh_account" />
 
+        <TextView
+            android:id="@+id/tvDividerOr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/or"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_dh_account" />
+
+        <ImageView
+            android:id="@+id/ivDivider1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:contentDescription="@string/divider"
+            android:src="@drawable/line"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDividerOr"
+            app:layout_constraintEnd_toStartOf="@+id/tvDividerOr"
+            app:layout_constraintTop_toTopOf="@+id/tvDividerOr" />
+
+        <ImageView
+            android:id="@+id/ivDivider2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:contentDescription="@string/divider"
+            android:src="@drawable/line"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDividerOr"
+            app:layout_constraintStart_toEndOf="@+id/tvDividerOr"
+            app:layout_constraintTop_toTopOf="@+id/tvDividerOr" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_google"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/bg_btn_google"
             android:drawableStart="@drawable/google"
             android:drawablePadding="5dp"
@@ -125,6 +159,16 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/et_password"
             app:layout_constraintStart_toStartOf="@+id/et_password"
-            app:layout_constraintTop_toBottomOf="@+id/tv_dh_account" />
+            app:layout_constraintTop_toBottomOf="@+id/tvDividerOr" />
+
+        <ProgressBar
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
