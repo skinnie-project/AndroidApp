@@ -5,19 +5,19 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
-    <string name="login">Login</string>
-    <string name="dh_account">Don\'t have account?</string>
-    <string name="sign_up">Sign Up</string>
+    <string name="login">Masuk</string>
+    <string name="dh_account">Belum memiliki akun?</string>
+    <string name="sign_up">Daftar</string>
     <string name="create_account">Create Account</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="email">Email</string>
-    <string name="google">continue with Google</string>
-    <string name="name">Name</string>
-    <string name="forgot_password">Forgot Password?</string>
-    <string name="title_forgot_password">Forgot Password</string>
-    <string name="new_password">New Password</string>
-    <string name="confirm_new_password">Confirm New Password</string>
-    <string name="submit">Submit</string>
+    <string name="google">masuk dengan Google</string>
+    <string name="name">Nama</string>
+    <string name="forgot_password">Lupa Password?</string>
+    <string name="title_forgot_password">Ganti Password</string>
+    <string name="new_password">Password Baru</string>
+    <string name="confirm_new_password">Konfirmasi Password Baru</string>
+    <string name="submit">Ganti</string>
     <string name="title_activity_navigation">NavigationActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
@@ -62,4 +62,6 @@
     <string name="switch_camera">Putar Kamera</string>
     <string name="ilustration">Ilustrasi Gambar Kulit</string>
     <string name="image_product">Gambar Produk Skincare</string>
+    <string name="or">atau</string>
+    <string name="divider">garis pembatas</string>
 </resources>

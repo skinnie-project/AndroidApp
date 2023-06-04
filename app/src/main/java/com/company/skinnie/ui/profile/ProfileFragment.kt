@@ -5,11 +5,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import com.company.skinnie.Preferences
 import com.company.skinnie.databinding.FragmentProfileBinding
-import com.company.skinnie.ui.article.ArticleActivity
+import com.company.skinnie.ui.auth.AuthActivity
 import com.company.skinnie.ui.saran.SaranActivity
 import com.company.skinnie.ui.wishlist.WishlistActivity
 
@@ -32,6 +31,12 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.cvKeluar.setOnClickListener {
+            Preferences(requireContext()).clearValues()
+            startActivity(Intent(requireContext(), AuthActivity::class.java))
+            activity?.finish()
+        }
 
         binding.cvFavorite.setOnClickListener {
             startActivity(Intent(requireContext(), WishlistActivity::class.java))
