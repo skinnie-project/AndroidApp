@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.company.skinnie.databinding.ItemRecommendBinding
 import com.company.skinnie.model.ProductModel
 
-class RecommendAdapter(): RecyclerView.Adapter<RecommendAdapter.ViewHolder>() {
+class RecommendAdapter : RecyclerView.Adapter<RecommendAdapter.ViewHolder>() {
 
     private val recommends = arrayListOf<ProductModel>()
 

@@ -11,6 +11,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.company.skinnie.Preferences
 import com.company.skinnie.databinding.ActivityPreviewImageBinding
 import com.company.skinnie.reduceFileImage
 import com.company.skinnie.rotateBitmap
@@ -20,9 +21,14 @@ import java.io.File
 class PreviewImageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPreviewImageBinding
 
+    private var imagePhoto: File? = null
+
+    private val viewModel: PreviewImageViewModel by lazy {
+        PreviewImageViewModel()
+    }
+
     companion object {
         const val CAMERA_X_RESULT = 200
-
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
         private const val REQUEST_CODE_PERMISSIONS = 10
     }
@@ -72,7 +78,23 @@ class PreviewImageActivity : AppCompatActivity() {
             onBackPressed()
         }
         binding.btnSend.setOnClickListener {
-            startActivity(Intent(this, ResultScanActivity::class.java))
+            uploadImage()
+        }
+    }
+
+    private fun uploadImage() {
+
+        viewModel.uploadImage(imagePhoto!!, getFile.toString()).observe(this) {
+            if (it != null) {
+                val preferences = Preferences(this)
+
+                preferences.setValues("predict", it.predicted!!)
+
+                Toast.makeText(this, "Berhasil", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, ResultScanActivity::class.java))
+            } else {
+                Toast.makeText(this, "Gagal", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -81,15 +103,6 @@ class PreviewImageActivity : AppCompatActivity() {
         launcherIntentCameraX.launch(intent)
     }
 
-    private fun startGallery() {
-        val intent = Intent()
-        intent.action = Intent.ACTION_GET_CONTENT
-        intent.type = "image/*"
-        val chooser = Intent.createChooser(intent, "Choose a Picture")
-        launcherIntentGallery.launch(chooser)
-    }
-
-    private var getFile: File? = null
     private val launcherIntentCameraX = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) {
@@ -106,14 +119,27 @@ class PreviewImageActivity : AppCompatActivity() {
         }
     }
 
+    private fun startGallery() {
+        val intent = Intent()
+        intent.action = Intent.ACTION_GET_CONTENT
+        intent.type = "image/*"
+        val chooser = Intent.createChooser(intent, "Choose a Picture")
+        launcherIntentGallery.launch(chooser)
+    }
+
+    private var getFile: File? = null
     private val launcherIntentGallery = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
         if (result.resultCode == RESULT_OK) {
+
             val selectedImg: Uri = result.data?.data as Uri
             val myFile = uriToFile(selectedImg, this)
             getFile = myFile
+            val results = BitmapFactory.decodeFile(myFile.path)
             binding.ivPreviewImage.setImageURI(selectedImg)
+            //untuk mengurangi ukuran gambar
+            imagePhoto = reduceFileImage(results, myFile)
         }
     }
 }
