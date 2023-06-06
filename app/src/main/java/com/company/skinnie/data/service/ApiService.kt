@@ -24,4 +24,9 @@ interface ApiService {
         @Part file: MultipartBody.Part,
         @Part("filename") filename: RequestBody
     ): Call<ResponseScan>
+
+    @GET("predict/recommend")
+    fun getRecommendation(
+        @Query("predicted") predicted: String,
+    ): Call<List<ResponseRecommend.ResponseRecommendItem>>
 }

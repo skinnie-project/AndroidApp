@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.company.skinnie.Preferences
 import com.company.skinnie.databinding.ActivityResultScanBinding
-import com.company.skinnie.ui.manual_input.ManualInputActivity
 import com.company.skinnie.ui.recomend.RecomendedActivity
 
 class ResultScanActivity : AppCompatActivity() {
@@ -26,11 +25,13 @@ class ResultScanActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         binding.btnNo.setOnClickListener {
-            startActivity(Intent(this, ManualInputActivity::class.java))
+            startActivity(Intent(this, RecomendedActivity::class.java))
         }
 
         binding.btnYes.setOnClickListener {
-            startActivity(Intent(this, RecomendedActivity::class.java))
+            val intent = Intent(this, RecomendedActivity::class.java)
+            intent.putExtra(RecomendedActivity.EXTRA_PREDICT, predict)
+            startActivity(intent)
         }
 
         binding.toolbar.setNavigationOnClickListener {
