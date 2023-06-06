@@ -1,17 +1,16 @@
 package com.company.skinnie.ui.recomend
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.company.skinnie.R
 import com.company.skinnie.adapter.RecommendAdapter
 import com.company.skinnie.databinding.ActivityRecomendedBinding
-import com.company.skinnie.model.ProductModel
 
 class RecomendedActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRecomendedBinding
-
-    private val list = ArrayList<ProductModel>()
+    private lateinit var recommendAdapter: RecommendAdapter
+    private val viewModel: RecommendViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,53 +21,31 @@ class RecomendedActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        val predict = intent.getStringExtra(EXTRA_PREDICT)
+        binding.tvRecomended.text = predict
+
         binding.toolbar.setNavigationOnClickListener {
             onBackPressed()
         }
 
-        val recomAdapter = RecommendAdapter()
+        recommendAdapter = RecommendAdapter()
         binding.rvRecommend.apply {
-            adapter = recomAdapter
+            adapter = recommendAdapter
             layoutManager = LinearLayoutManager(this@RecomendedActivity)
         }
-        dataDummy()
-        recomAdapter.setRecommend(list)
+        getUser(predict!!)
     }
 
-    private fun dataDummy() {
-        list.addAll(
-            listOf(
-                ProductModel(
-                    "Skintific",
-                    "Produk ini memiliki kandungan yang dapat membantu mengatasi masalah kulitmu.",
-                    R.drawable.dummy_product,
-                    "Rp 100.000"
-                ),
-                ProductModel(
-                    "Skintific",
-                    "Produk ini memiliki kandungan yang dapat membantu mengatasi masalah kulitmu.",
-                    R.drawable.dummy_product,
-                    "Rp 100.000"
-                ),
-                ProductModel(
-                    "Skintific",
-                    "Produk ini memiliki kandungan yang dapat membantu mengatasi masalah kulitmu.",
-                    R.drawable.dummy_product,
-                    "Rp 100.000"
-                ),
-                ProductModel(
-                    "Skintific",
-                    "Produk ini memiliki kandungan yang dapat membantu mengatasi masalah kulitmu.",
-                    R.drawable.dummy_product,
-                    "Rp 100.000"
-                ),
-                ProductModel(
-                    "Skintific",
-                    "Produk ini memiliki kandungan yang dapat membantu mengatasi masalah kulitmu.",
-                    R.drawable.dummy_product,
-                    "Rp 100.000"
-                ),
-            )
-        )
+    private fun getUser(query: String) {
+        viewModel.setPredict(query).observe(this) {
+            if (it != null) {
+                recommendAdapter.setRecommend(it)
+            }
+        }
+
+    }
+
+    companion object {
+        const val EXTRA_PREDICT = "extra_predict"
     }
 }
