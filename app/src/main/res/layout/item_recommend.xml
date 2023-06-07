@@ -5,6 +5,7 @@
     android:layout_height="150dp"
     android:layout_marginHorizontal="20dp"
     android:layout_marginBottom="20dp"
+    android:layout_marginTop="4dp"
     app:cardBackgroundColor="@color/cream"
     app:cardCornerRadius="15dp"
     app:cardElevation="10dp">
@@ -36,7 +37,7 @@
 
         <TextView
             android:id="@+id/tvMerekProduct"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="12dp"
             android:layout_marginTop="5dp"

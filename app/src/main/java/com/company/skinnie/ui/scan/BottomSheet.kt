@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.company.skinnie.Preferences
 import com.company.skinnie.databinding.FragmentBottomSheetBinding
 import com.company.skinnie.ui.manual_input.ManualInputActivity
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -26,6 +27,7 @@ class BottomSheet : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnTryAgain.setOnClickListener {
+            Preferences(requireContext()).clearValues()
             startActivity(Intent(requireContext(), PreviewImageActivity::class.java))
             activity?.finish()
         }

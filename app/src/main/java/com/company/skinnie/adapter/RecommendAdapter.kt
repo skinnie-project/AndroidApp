@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide
 import com.company.skinnie.data.response.ResponseRecommend
 import com.company.skinnie.databinding.ItemRecommendBinding
 
-class RecommendAdapter : RecyclerView.Adapter<RecommendAdapter.RecommendViewHolder>() {
+class RecommendAdapter(val clickListener: (Int) -> Unit) : RecyclerView.Adapter<RecommendAdapter.RecommendViewHolder>() {
 
     private val recommends = arrayListOf<ResponseRecommend.ResponseRecommendItem?>()
     fun setRecommend(recommendList: List<ResponseRecommend.ResponseRecommendItem?>) {
@@ -27,6 +27,9 @@ class RecommendAdapter : RecyclerView.Adapter<RecommendAdapter.RecommendViewHold
                     tvMerekProduct.text = recommend.brand
                     tvDescProduct.text = recommend.description
                     tvPriceProduct.text = recommend.price
+                }
+                itemView.setOnClickListener {
+                    clickListener.invoke(recommend!!.id!!)
                 }
             }
         }

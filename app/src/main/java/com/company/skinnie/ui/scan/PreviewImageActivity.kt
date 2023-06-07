@@ -60,6 +60,13 @@ class PreviewImageActivity : AppCompatActivity() {
         binding = ActivityPreviewImageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val predict = Preferences(this).getValues("predict").toString()
+
+        if (predict.isNotEmpty()) {
+            startActivity(Intent(this, ResultScanActivity::class.java))
+            finish()
+        }
+
         if (!allPermissionsGranted()) {
             ActivityCompat.requestPermissions(
                 this,
