@@ -22,6 +22,16 @@ class RecomendedActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val predict = intent.getStringExtra(EXTRA_PREDICT)
+        val ingredient1 = intent.getStringExtra(EXTRA_INGREDIENT1)
+        val ingredient2 = intent.getStringExtra(EXTRA_INGREDIENT2)
+        val ingredient3 = intent.getStringExtra(EXTRA_INGREDIENT3)
+        val ingredient4 = intent.getStringExtra(EXTRA_INGREDIENT4)
+
+        binding.tvIngredient1.text = ingredient1
+        binding.tvIngredient2.text = ingredient2
+        binding.tvIngredient3.text = ingredient3
+        binding.tvIngredient4.text = ingredient4
+
         binding.tvRecomended.text = predict
 
         binding.toolbar.setNavigationOnClickListener {
@@ -46,6 +56,10 @@ class RecomendedActivity : AppCompatActivity() {
     }
 
     companion object {
+        const val EXTRA_INGREDIENT1 = "extra_ingredient_1"
+        const val EXTRA_INGREDIENT2 = "extra_ingredient_2"
+        const val EXTRA_INGREDIENT3 = "extra_ingredient_3"
+        const val EXTRA_INGREDIENT4 = "extra_ingredient_4"
         const val EXTRA_PREDICT = "extra_predict"
     }
 }

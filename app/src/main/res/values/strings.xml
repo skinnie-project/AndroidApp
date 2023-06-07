@@ -64,4 +64,6 @@
     <string name="image_product">Gambar Produk Skincare</string>
     <string name="or">atau</string>
     <string name="divider">garis pembatas</string>
+    <string name="try_again">Coba Lagi</string>
+    <string name="choose">Pilih Tipe Kulit</string>
 </resources>

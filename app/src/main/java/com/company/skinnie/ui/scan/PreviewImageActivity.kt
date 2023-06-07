@@ -89,6 +89,10 @@ class PreviewImageActivity : AppCompatActivity() {
                 val preferences = Preferences(this)
 
                 preferences.setValues("predict", it.predicted!!)
+                preferences.setValues("ingredient1", it.keyIngredients1!!)
+                preferences.setValues("ingredient2", it.keyIngredients2!!)
+                preferences.setValues("ingredient3", it.keyIngredients3!!)
+                preferences.setValues("ingredient4", it.keyIngredients4!!)
 
                 Toast.makeText(this, "Berhasil", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, ResultScanActivity::class.java))

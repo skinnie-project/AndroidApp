@@ -10,13 +10,11 @@ import com.company.skinnie.databinding.ItemRecommendBinding
 class RecommendAdapter : RecyclerView.Adapter<RecommendAdapter.RecommendViewHolder>() {
 
     private val recommends = arrayListOf<ResponseRecommend.ResponseRecommendItem?>()
-
     fun setRecommend(recommendList: List<ResponseRecommend.ResponseRecommendItem?>) {
         recommends.clear()
         recommends.addAll(recommendList)
         notifyDataSetChanged()
     }
-
 
     inner class RecommendViewHolder(private val binding: ItemRecommendBinding) :
         RecyclerView.ViewHolder(binding.root) {
