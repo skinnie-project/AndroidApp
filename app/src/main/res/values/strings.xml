@@ -55,7 +55,7 @@
     <string name="title_product">Produk</string>
     <string name="dummy_merek">Skintific</string>
     <string name="dummy_price">Rp 100.000</string>
-    <string name="dummy_desc">Produk ini memiliki kandungan yang dapat membantu mengatasi masalah kulitmu.</string>
+    <string name="dummy_desc">Skintific 5X Ceramide Barrier Moisture Gel menggabungkan 3 kandungan aktif Ceramide, Hyaluronic Acid, dan Centella Asiatica, untuk mengatasi permasalahan skin barrier yang rusak seperti jerawat, kemerahan, kulit bertekstur, dan juga kulit kering secara cepat namun tetap aman untuk skin barrier. Diperkaya dengan teknolog 5X Ceramide, yang merupakan gabungan 5 jenis Ceramide untuk melembabkan secara mendalam dan memperkuat lapisan kulit. 5X Ceramide ini membantu untuk memperbaiki dan melindungi skin barrier dengan menjaga kelembaban dan melindungi kulit dari faktor eksternal.</string>
     <string name="back">Kembali</string>
     <string name="background">background</string>
     <string name="capture_image">Tangkap Gambar</string>
@@ -66,4 +66,13 @@
     <string name="divider">garis pembatas</string>
     <string name="try_again">Coba Lagi</string>
     <string name="choose">Pilih Tipe Kulit</string>
+    <string name="detail_product">Rincian Produk</string>
+    <string name="favorite">Favorite</string>
+    <string name="brand_product">-</string>
+    <string name="name_product">%2$s</string>
+    <string name="ingredient">Vitamin C, Niacinamide, Galactomyces Ferment Filtrate</string>
+    <string name="title_tutorial">Cara Pakai :</string>
+    <string name="tutorial">Gunakan 1–2x sehari. Usapkan pada bagian kulit wajah, area mata dan leher. Pijat lembut dengan gerakan memutar untuk hasil yang optimal.</string>
+    <string name="icon_favorite">Tambah Favorit</string>
+    <string name="list_product">List Produk</string>
 </resources>

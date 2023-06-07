@@ -1,11 +1,13 @@
 package com.company.skinnie.ui.recomend
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.company.skinnie.adapter.RecommendAdapter
 import com.company.skinnie.databinding.ActivityRecomendedBinding
+import com.company.skinnie.ui.detail.DetailProductActivity
 
 class RecomendedActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRecomendedBinding
@@ -38,15 +40,47 @@ class RecomendedActivity : AppCompatActivity() {
             onBackPressed()
         }
 
-        recommendAdapter = RecommendAdapter()
+        recommendAdapter = RecommendAdapter { id ->
+            startActivity(Intent(this, DetailProductActivity::class.java).apply {
+                putExtra(DetailProductActivity.EXTRA_ID, id)
+            })
+        }
+
         binding.rvRecommend.apply {
             adapter = recommendAdapter
             layoutManager = LinearLayoutManager(this@RecomendedActivity)
         }
-        getUser(predict!!)
+
+        val subcategory = "Semua subcategory"
+
+        binding.tvIngredient1.setOnClickListener {
+            goToFilterActivity(ingredient1, predict, subcategory)
+        }
+
+        binding.tvIngredient2.setOnClickListener {
+            goToFilterActivity(ingredient2, predict, subcategory)
+        }
+
+        binding.tvIngredient3.setOnClickListener {
+            goToFilterActivity(ingredient3, predict, subcategory)
+        }
+
+        binding.tvIngredient4.setOnClickListener {
+            goToFilterActivity(ingredient4, predict, subcategory)
+        }
+
+        getData(predict!!)
     }
 
-    private fun getUser(query: String) {
+    private fun goToFilterActivity(ingredient: String?, predict: String?, subcategory: String?) {
+        startActivity(Intent(this, FilterActivity::class.java).apply {
+            putExtra(FilterActivity.EXTRA_INGREDIENTS, ingredient)
+            putExtra(FilterActivity.EXTRA_PREDICT, predict)
+            putExtra(FilterActivity.EXTRA_SUBCATEGORY, subcategory)
+        })
+    }
+
+    private fun getData(query: String) {
         viewModel.setPredict(query).observe(this) {
             if (it != null) {
                 recommendAdapter.setRecommend(it)
