@@ -41,4 +41,12 @@ interface ApiService {
         @Query("subcategory") subcategory: String,
         @Query("predicted") predicted: String,
     ): Call<List<ResponseFilter.ResponseFilterItem>>
+
+    @GET("article")
+    fun getArticle(
+    ): Call<List<ResponseArticleItem>>
+
+    @GET("data/popular")
+    fun getPopular(
+    ): Call<List<ResponsePopularItem>>
 }
