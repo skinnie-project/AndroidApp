@@ -49,7 +49,7 @@
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_marginEnd="16dp"
-                    android:src="@drawable/ic_profile"
+                    android:src="@drawable/ic_profile_rounded"
                     app:layout_constraintBottom_toBottomOf="@+id/tvUser"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/welcome" />
@@ -126,10 +126,10 @@
                     android:id="@+id/rvPopuler"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
-                    app:layout_constraintStart_toStartOf="@+id/textView"
-                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView"
+                    tools:listitem="@layout/list_popular_item" />
 
                 <TextView
                     android:id="@+id/textView2"
@@ -148,9 +148,8 @@
                     android:id="@+id/rvArtikel"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
-                    app:layout_constraintStart_toStartOf="@+id/textView2"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
                 <TextView
@@ -162,7 +161,8 @@
                     android:textSize="12dp"
                     app:layout_constraintBottom_toBottomOf="@+id/textView2"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/textView2" />
+                    app:layout_constraintTop_toTopOf="@+id/textView2"
+                    />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
