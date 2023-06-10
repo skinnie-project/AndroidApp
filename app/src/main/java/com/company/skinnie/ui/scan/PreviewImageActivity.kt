@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -85,13 +86,18 @@ class PreviewImageActivity : AppCompatActivity() {
             onBackPressed()
         }
         binding.btnSend.setOnClickListener {
-            uploadImage()
+            if (imagePhoto != null) {
+                binding.loading.visibility = View.VISIBLE
+                uploadImage()
+            } else {
+                Toast.makeText(this, "Gambar tidak boleh kosong", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
     private fun uploadImage() {
-
         viewModel.uploadImage(imagePhoto!!, getFile.toString()).observe(this) {
+            binding.loading.visibility = View.GONE
             if (it != null) {
                 val preferences = Preferences(this)
 
@@ -103,7 +109,9 @@ class PreviewImageActivity : AppCompatActivity() {
 
                 Toast.makeText(this, "Berhasil", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, ResultScanActivity::class.java))
+                finish()
             } else {
+                binding.loading.visibility = View.GONE
                 Toast.makeText(this, "Gagal", Toast.LENGTH_SHORT).show()
             }
         }
@@ -143,7 +151,6 @@ class PreviewImageActivity : AppCompatActivity() {
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
         if (result.resultCode == RESULT_OK) {
-
             val selectedImg: Uri = result.data?.data as Uri
             val myFile = uriToFile(selectedImg, this)
             getFile = myFile

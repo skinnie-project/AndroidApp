@@ -2,6 +2,7 @@ package com.company.skinnie.ui.recomend
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -69,6 +70,7 @@ class RecomendedActivity : AppCompatActivity() {
             goToFilterActivity(ingredient4, predict, subcategory)
         }
 
+        binding.loading.visibility = View.VISIBLE
         getData(predict!!)
     }
 
@@ -82,6 +84,7 @@ class RecomendedActivity : AppCompatActivity() {
 
     private fun getData(query: String) {
         viewModel.setPredict(query).observe(this) {
+            binding.loading.visibility = View.GONE
             if (it != null) {
                 recommendAdapter.setRecommend(it)
             }

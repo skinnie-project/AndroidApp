@@ -22,7 +22,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="instruction1">1. Pastikan Anda berada di tempat dengan pencahayaan yang baik dan cukup. Hindari tempat yang terlalu gelap atau terlalu terang, karena hal ini dapat mempengaruhi kualitas pemindaian wajah.</string>
+    <string name="instruction1">1. Pastikan Anda berada di tempat dengan pencahayaan yang baik dan cukup.</string>
     <string name="title_instruction">Instruksi Pemakaian</string>
     <string name="instruction2">2. Pastikan wajah Anda bersih dari kotoran, minyak, atau makeup berlebihan.</string>
     <string name="instruction3">3. Pastikan tidak ada bayangan yang menutupi wajah Anda saat melakukan scan.</string>
@@ -75,4 +75,29 @@
     <string name="tutorial">Gunakan 1–2x sehari. Usapkan pada bagian kulit wajah, area mata dan leher. Pijat lembut dengan gerakan memutar untuk hasil yang optimal.</string>
     <string name="icon_favorite">Tambah Favorit</string>
     <string name="list_product">List Produk</string>
+    <string name="empty_product">Maaf tidak ada produk yang tersedia</string>
+    <string-array name="spinner_subcategory">
+        <item>Semua subcategory</item>
+        <item>Peeling</item>
+        <item><![CDATA[Serum & Essence]]></item>
+        <item>Cream</item>
+        <item>Mask Sheet</item>
+        <item>Toner</item>
+        <item>Eye Cream</item>
+        <item>Sun Protection</item>
+        <item>Wash-Off</item>
+        <item>Face Mist</item>
+        <item>Facial Wash</item>
+        <item>Acne Treatment</item>
+        <item>Gel</item>
+        <item><![CDATA[Lotion & Emulsion]]></item>
+        <item>Face Oil</item>
+        <item>Face</item>
+        <item>Oil</item>
+        <item><![CDATA[Brow & Lash Treatment]]></item>
+        <item><![CDATA[Scrub & Exfoliator]]></item>
+        <item>Skin Soothing Treatment</item>
+        <item><![CDATA[Eye & Lip]]></item>
+        <item>Eye Serum</item>
+    </string-array>
 </resources>
