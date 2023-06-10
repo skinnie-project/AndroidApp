@@ -1,6 +1,7 @@
 package com.company.skinnie.ui.detail
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
@@ -24,7 +25,7 @@ class DetailProductActivity : AppCompatActivity() {
         binding.toolbar.setNavigationOnClickListener {
             onBackPressed()
         }
-        binding.loading.visibility = android.view.View.VISIBLE
+        binding.loading.visibility = View.VISIBLE
         getProduct(id)
 
     }
@@ -32,7 +33,7 @@ class DetailProductActivity : AppCompatActivity() {
     private fun getProduct(id: Int) {
         viewModel.setDetail(id).observe(this) {
             if (it != null) {
-                binding.loading.visibility = android.view.View.GONE
+                binding.loading.visibility = View.GONE
                 Glide.with(this)
                     .load(it[0]!!.urlNew)
                     .into(binding.ivProduct)
@@ -43,7 +44,6 @@ class DetailProductActivity : AppCompatActivity() {
                 binding.tvIngredient.text = it[0]!!.ingredients
                 binding.tvTutorial.text = it[0]!!.howToUse
             }
-
         }
     }
 

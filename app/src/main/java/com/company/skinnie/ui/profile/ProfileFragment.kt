@@ -32,6 +32,11 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //value getPreferences
+        val name = Preferences(requireContext()).getValues("name")
+
+        binding.tvNameUser.text = name
+
         binding.cvKeluar.setOnClickListener {
             Preferences(requireContext()).clearValues()
             startActivity(Intent(requireContext(), AuthActivity::class.java))

@@ -1,5 +1,6 @@
 package com.company.skinnie.ui.scan
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -7,11 +8,11 @@ import com.company.skinnie.Preferences
 import com.company.skinnie.R
 import com.company.skinnie.databinding.ActivityResultScanBinding
 import com.company.skinnie.ui.recomend.RecomendedActivity
-import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class ResultScanActivity : AppCompatActivity() {
     private lateinit var binding: ActivityResultScanBinding
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityResultScanBinding.inflate(layoutInflater)
@@ -24,14 +25,29 @@ class ResultScanActivity : AppCompatActivity() {
         val ingredient3 = Preferences(this).getValues("ingredient3")
         val ingredient4 = Preferences(this).getValues("ingredient4")
 
+        when (predict) {
+            "Berminyak" -> {
+                binding.ivAnimationSkin.setImageDrawable(getDrawable(R.drawable.animation_oily))
+            }
+            "Kering" -> {
+                binding.ivAnimationSkin.setImageDrawable(getDrawable(R.drawable.animation_dry))
+            }
+            else -> {
+                binding.ivAnimationSkin.setImageDrawable(getDrawable(R.drawable.animation_normal))
+            }
+        }
+
         binding.tvResultScan.text = predict
 
         //actionbar in activity
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        //buttom sheet
+        val buttomSheetFragment = BottomSheet()
         binding.btnNo.setOnClickListener {
-            showBottomSheetDialog()
+            buttomSheetFragment.show(supportFragmentManager, "BottomSheet")
+            //showBottomSheetDialog()
         }
 
         binding.btnYes.setOnClickListener {
@@ -47,12 +63,5 @@ class ResultScanActivity : AppCompatActivity() {
         binding.toolbar.setNavigationOnClickListener {
             onBackPressed()
         }
-    }
-
-    private fun showBottomSheetDialog() {
-        val dialogView = layoutInflater.inflate(R.layout.fragment_bottom_sheet, null)
-        val dialog = BottomSheetDialog(this, R.style.BottomSheetTheme)
-        dialog.setContentView(dialogView)
-        dialog.show()
     }
 }

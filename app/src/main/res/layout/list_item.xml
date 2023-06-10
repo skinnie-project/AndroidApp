@@ -31,18 +31,19 @@
 
         <TextView
             android:id="@+id/tvTitleArticle"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Title"
-            android:textSize="16dp"
-            android:textStyle="bold"
-            android:maxLines="2"
             android:ellipsize="end"
-            app:layout_constraintBottom_toBottomOf="@+id/ivArticle"
-            app:layout_constraintStart_toEndOf="@+id/ivArticle"
-            app:layout_constraintTop_toTopOf="@+id/ivArticle"
-            app:layout_constraintVertical_bias="0.296" />
+            android:maxLines="2"
+            android:text="Title"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="130dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivArticle" />
 
         <TextView
             android:id="@+id/tvWriterArticle"
@@ -50,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="TextView"
-            android:textSize="12dp"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@+id/tvTitleArticle"
             app:layout_constraintTop_toBottomOf="@+id/tvTitleArticle" />
 

@@ -2,6 +2,8 @@ package com.company.skinnie.ui.recomend
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -25,32 +27,56 @@ class FilterActivity : AppCompatActivity() {
 
         val predict = intent.getStringExtra(EXTRA_PREDICT)
         val ingredients = intent.getStringExtra(EXTRA_INGREDIENTS)
-        val subcategory = intent.getStringExtra(EXTRA_SUBCATEGORY)
+        //val subcategory = intent.getStringExtra(EXTRA_SUBCATEGORY)
 
-        filterAdapter = FilterAdapter{id ->
+        //recyclerview item onclick
+        filterAdapter = FilterAdapter { id ->
             startActivity(Intent(this, DetailProductActivity::class.java).apply {
                 putExtra(DetailProductActivity.EXTRA_ID, id)
             })
         }
 
-        binding.toolbar.setNavigationOnClickListener {
-            onBackPressed()
-        }
+        //recyclerview
         binding.rvListProduct.apply {
             adapter = filterAdapter
             layoutManager = LinearLayoutManager(this@FilterActivity)
         }
 
-        binding.loading.visibility = android.view.View.VISIBLE
-        getData(ingredients!!, subcategory!!, predict!!)
+        //toolbar arrow back
+        binding.toolbar.setNavigationOnClickListener {
+            onBackPressed()
+        }
 
+        val subCategory = binding.spSubCategory.selectedItem.toString()
+        //loading
+        binding.loading.visibility = View.VISIBLE
+        getData(ingredients!!, subCategory, predict!!)
+
+        //spinner subcategory
+        binding.spSubCategory.onItemSelectedListener = object :
+            AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                val subCategory = binding.spSubCategory.selectedItem.toString()
+                getData(ingredients, subCategory, predict)
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+            }
+        }
     }
 
-    private fun getData(ingredients: String,subcategory: String, predict: String) {
+    private fun getData(ingredients: String, subcategory: String, predict: String) {
         viewModel.setFilter(ingredients, subcategory, predict).observe(this) {
-            binding.loading.visibility = android.view.View.GONE
+            binding.loading.visibility = View.GONE
             if (it != null) {
                 filterAdapter.setFilter(it)
+            } else{
+                binding.tvEmpty.visibility = View.VISIBLE
             }
         }
     }
