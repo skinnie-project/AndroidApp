@@ -1,6 +1,8 @@
 package com.company.skinnie.ui.auth
 
 import android.os.Bundle
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +18,7 @@ class RegisterFragment : Fragment() {
     private val binding get() = _binding!!
     private val viewModel: RegisterViewModel by viewModels()
 
+    private var mIsShowPass = false
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,35 +31,69 @@ class RegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnRegister.setOnClickListener {
-            val username = binding.etUsername.text.toString()
-            val password = binding.etPassword.text.toString()
-            val confirmPassword = binding.etConfirmPassword.text.toString()
-            val email = binding.etEmail.text.toString()
-            val name = binding.etName.text.toString()
+        binding.apply {
+            etPassword.setOnClickListener {
+                mIsShowPass = !mIsShowPass
+                showPassword(mIsShowPass)
+            }
 
-            when {
-                username.isEmpty() -> {
-                    binding.etUsername.error = "Username tidak boleh kosong"
-                }
-                password.isEmpty() -> {
-                    binding.etPassword.error = "Password tidak boleh kosong"
-                }
-                confirmPassword.isEmpty() -> {
-                    binding.etConfirmPassword.error = "Confirm Password tidak boleh kosong"
-                }
-                email.isEmpty() -> {
-                    binding.etEmail.error = "Email tidak boleh kosong"
-                }
-                name.isEmpty() -> {
-                    binding.etName.error = "Name tidak boleh kosong"
-                }
-                else -> {
-                    binding.loading.visibility = View.VISIBLE
-                    getData(PayloadRegister(username = username, password = password, email = email, nama = name))
+            etConfirmPassword.setOnClickListener {
+                mIsShowPass = !mIsShowPass
+                showPassword(mIsShowPass)
+            }
+
+            btnRegister.setOnClickListener {
+                val username = binding.etUsername.text.toString()
+                val password = binding.etPassword.text.toString()
+                val confirmPassword = binding.etConfirmPassword.text.toString()
+                val email = binding.etEmail.text.toString()
+                val name = binding.etName.text.toString()
+
+                when {
+                    username.isEmpty() -> {
+                        binding.etUsername.error = "Username tidak boleh kosong"
+                    }
+                    password.isEmpty() -> {
+                        binding.etPassword.error = "Password tidak boleh kosong"
+                    }
+                    confirmPassword.isEmpty() -> {
+                        binding.etConfirmPassword.error = "Confirm Password tidak boleh kosong"
+                    }
+                    email.isEmpty() -> {
+                        binding.etEmail.error = "Email tidak boleh kosong"
+                    }
+                    name.isEmpty() -> {
+                        binding.etName.error = "Name tidak boleh kosong"
+                    }
+                    else -> {
+                        binding.loading.visibility = View.VISIBLE
+                        getData(
+                            PayloadRegister(
+                                username = username,
+                                password = password,
+                                email = email,
+                                nama = name
+                            )
+                        )
+                    }
                 }
             }
         }
+        showPassword(mIsShowPass)
+    }
+
+    private fun showPassword(isShow: Boolean) {
+        if (isShow) {
+            binding.etPassword.transformationMethod =
+                HideReturnsTransformationMethod.getInstance()
+            binding.etConfirmPassword.transformationMethod =
+                HideReturnsTransformationMethod.getInstance()
+        } else {
+            binding.etPassword.transformationMethod = PasswordTransformationMethod.getInstance()
+            binding.etConfirmPassword.transformationMethod =
+                PasswordTransformationMethod.getInstance()
+        }
+        binding.etPassword.setSelection(binding.etPassword.text.toString().length)
     }
 
     private fun getData(payloadRegister: PayloadRegister) {
