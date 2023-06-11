@@ -2,11 +2,11 @@ package com.company.skinnie.data.response
 
 import com.google.gson.annotations.SerializedName
 
-data class PayloadLogin(
+data class PayloadForgotPassword(
 
 	@field:SerializedName("username")
 	val username: String,
 
-	@field:SerializedName("password")
-	val password: String,
+	@field:SerializedName("new_password")
+	val newPassword: String,
 )

@@ -18,6 +18,11 @@ interface ApiService {
         @Body body: PayloadRegister
     ): Call<ResponseRegister>
 
+    @POST("forgot")
+    fun forgot(
+        @Body body: PayloadForgotPassword
+    ): Call<ResponseForgotPassword>
+
     @Multipart
     @POST("predict")
     fun postImage(
