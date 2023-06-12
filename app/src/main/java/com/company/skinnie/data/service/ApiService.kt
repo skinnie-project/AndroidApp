@@ -18,6 +18,11 @@ interface ApiService {
         @Body body: PayloadRegister
     ): Call<ResponseRegister>
 
+    @POST("login/google")
+    fun google(
+        @Body body: PayloadGoogle
+    ): Call<ResponseGoogle>
+
     @POST("forgot")
     fun forgot(
         @Body body: PayloadForgotPassword
