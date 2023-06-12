@@ -8,6 +8,7 @@ Components used in the application development:
 5. Glide
 6. CameraX
 7. Okhttp
+8. Room Database
 
 Prerequisites:
 - Mobile phone with a minimum API level of 24 - Android 7.0 (Nougat)
