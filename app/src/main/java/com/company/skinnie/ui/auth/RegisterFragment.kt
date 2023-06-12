@@ -98,14 +98,14 @@ class RegisterFragment : Fragment() {
 
     private fun getData(payloadRegister: PayloadRegister) {
         viewModel.register(payloadRegister).observe(viewLifecycleOwner) {
-            if (it != null) {
+            if (it != null && it.status == "success"){
                 binding.loading.visibility = View.GONE
                 findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToLoginFragment())
             } else {
                 binding.loading.visibility = View.GONE
                 Toast.makeText(
                     requireContext(),
-                    "Register gagal",
+                    it!!.message,
                     Toast.LENGTH_SHORT
                 ).show()
             }

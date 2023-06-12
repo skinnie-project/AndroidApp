@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,15 +14,23 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.company.skinnie.NavigationActivity
 import com.company.skinnie.Preferences
+import com.company.skinnie.data.response.PayloadGoogle
 import com.company.skinnie.data.response.PayloadLogin
 import com.company.skinnie.databinding.FragmentLoginBinding
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.tasks.Task
 
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
     private val viewModel: LoginViewModel by viewModels()
+    private val viewModelGoogle: LoginGoogleViewModel by viewModels()
 
     private var mIsShowPass = false
+    private val RC_SIGN_IN = 1000
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,7 +38,6 @@ class LoginFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -39,6 +47,13 @@ class LoginFragment : Fragment() {
             startActivity(Intent(requireContext(), NavigationActivity::class.java))
             activity?.finish()
         }
+
+        // Configure Google Sign-In
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestEmail()
+            .build()
+
+        val googleSignInClient = GoogleSignIn.getClient(requireContext(), gso)
 
         binding.apply {
             etPassword.setOnClickListener {
@@ -69,6 +84,13 @@ class LoginFragment : Fragment() {
                         getData(PayloadLogin(username, password))
                     }
                 }
+            }
+
+            btnGoogle.setOnClickListener {
+                val signInIntent = googleSignInClient.signInIntent
+
+                binding.loading.visibility = View.VISIBLE
+                startActivityForResult(signInIntent, RC_SIGN_IN)
             }
         }
         showPassword(mIsShowPass)
@@ -103,6 +125,61 @@ class LoginFragment : Fragment() {
                     .show()
             }
         }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
+        if (requestCode == RC_SIGN_IN) {
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+            handleSignInResult(task)
+        }
+    }
+
+    private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
+        try {
+            val account = completedTask.getResult(ApiException::class.java)
+
+            // Signed in successfully, show authenticated UI
+            updateUI(account)
+        } catch (e: ApiException) {
+            // The ApiException status code indicates the detailed failure reason
+            // Please refer to the GoogleSignInStatusCodes class reference for more information
+            Log.d("GoogleSignIn", "signInResult:failed code = ${e.statusCode}")
+            Toast.makeText(
+                requireContext(),
+                "Failed to sign in. Please try again.",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+
+    private fun updateUI(account: GoogleSignInAccount?) {
+        // You can get the user's information from the account object
+        val displayName = account?.displayName
+        val email = account?.email
+
+        viewModelGoogle.userGoogle(PayloadGoogle(displayName, displayName, email))
+            .observe(viewLifecycleOwner) {
+                binding.loading.visibility = View.GONE
+                if (it != null && it.status == "success") {
+                    val preferences = Preferences(requireContext())
+
+                    //buat nyimpan data usernamenya
+                    preferences.setValues("name", displayName!!)
+
+                    //action to activity
+                    startActivity(Intent(requireContext(), NavigationActivity::class.java))
+                    activity?.finish()
+                } else {
+                    Toast.makeText(
+                        requireContext(),
+                        "Failed to sign in. Please try again.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
     }
 
     override fun onDestroy() {
