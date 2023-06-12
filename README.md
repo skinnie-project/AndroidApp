@@ -15,4 +15,6 @@ Prerequisites:
 How to Run:
 1. Clone this repository
 2. Choose an emulator or connect a real device via USB or pair devices using Wi-Fi
-3. Run the app (Shift+F10)
+3. Run the app (Shift+F10)
+![Screenshot 12_06_2023 18_49_12](https://github.com/skinnie-project/AndroidApp/assets/91369153/1b264c31-ebdf-4200-9709-325fcc7ba709)
+
