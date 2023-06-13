@@ -30,8 +30,8 @@
             android:id="@+id/cvImageProduct"
             android:layout_width="250dp"
             android:layout_height="200dp"
-            app:cardCornerRadius="15dp"
             android:layout_marginTop="10dp"
+            app:cardCornerRadius="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar">
@@ -40,8 +40,8 @@
                 android:id="@+id/ivProduct"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="fitCenter"
                 android:contentDescription="@string/image_product"
+                android:scaleType="fitCenter"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/toolbar" />
@@ -52,34 +52,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:textAllCaps="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cvImageProduct" />
-
-        <TextView
-            android:id="@+id/tvStrip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/brand_product"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginStart="4dp"
-            app:layout_constraintTop_toTopOf="@id/tvBrandProduct"
-            app:layout_constraintStart_toEndOf="@id/tvBrandProduct"/>
 
         <TextView
             android:id="@+id/tvNameProduct"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="5dp"
             android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold"
-            android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="@+id/tvBrandProduct"
             app:layout_constraintTop_toBottomOf="@+id/tvBrandProduct" />
 
@@ -149,10 +138,57 @@
             android:text="@string/dummy_price"
             android:textAllCaps="false"
             android:textColor="@color/black"
-            android:textStyle="bold"
             android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/cvImageProduct"
             app:layout_constraintStart_toStartOf="@+id/cvImageProduct" />
+
+        <TextView
+            android:id="@+id/tvTitleRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rate"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toStartOf="@+id/tvTitleTutorial"
+            app:layout_constraintTop_toBottomOf="@+id/tvTutorial" />
+
+        <ImageView
+            android:id="@+id/icRate"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/rating"
+            android:src="@drawable/ic_star"
+            app:layout_constraintStart_toStartOf="@+id/tvTutorial"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitleRate" />
+
+        <TextView
+            android:id="@+id/tvRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/skin_type"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/icRate"
+            app:layout_constraintStart_toEndOf="@+id/icRate"
+            app:layout_constraintTop_toTopOf="@+id/icRate" />
+
+        <TextView
+            android:id="@+id/tvReviewed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/reviewed"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/tvRating"
+            app:layout_constraintStart_toEndOf="@+id/tvRating"
+            app:layout_constraintTop_toTopOf="@+id/tvRating" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabFavorit"
@@ -165,7 +201,7 @@
             android:src="@drawable/baseline_favorite_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTutorial"
+            app:layout_constraintTop_toBottomOf="@+id/icRate"
             app:tint="@color/white" />
 
         <ProgressBar
