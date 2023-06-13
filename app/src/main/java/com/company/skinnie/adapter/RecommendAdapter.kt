@@ -4,13 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.company.skinnie.data.response.ResponsePopularItem
 import com.company.skinnie.data.response.ResponseRecommend
 import com.company.skinnie.databinding.ItemRecommendBinding
 
 class RecommendAdapter(val clickListener: (Int) -> Unit) : RecyclerView.Adapter<RecommendAdapter.RecommendViewHolder>() {
 
-    private val recommends = arrayListOf<ResponseRecommend.ResponseRecommendItem?>()
-    fun setRecommend(recommendList: List<ResponseRecommend.ResponseRecommendItem?>) {
+    private val recommends = arrayListOf<ResponsePopularItem?>()
+    fun setRecommend(recommendList: List<ResponsePopularItem?>) {
         recommends.clear()
         recommends.addAll(recommendList)
         notifyDataSetChanged()
@@ -18,7 +19,7 @@ class RecommendAdapter(val clickListener: (Int) -> Unit) : RecyclerView.Adapter<
 
     inner class RecommendViewHolder(private val binding: ItemRecommendBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(recommend: ResponseRecommend.ResponseRecommendItem?) {
+        fun bind(recommend: ResponsePopularItem?) {
             binding.apply {
                 if (recommend != null) {
                     Glide.with(itemView.context)

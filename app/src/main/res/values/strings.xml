@@ -37,7 +37,7 @@
     <string name="yes">Ya</string>
     <string name="no">Tidak</string>
     <string name="skin_type">Tipe Kulit</string>
-    <string name="title_input">Pilihlah Tipe Kulit yang sesuai dengan wajah anda</string>
+    <string name="title_input">Pilihlah kondisi yang sesuai dengan wajah anda</string>
     <string name="oily">Berminyak</string>
     <string name="dry">Kering</string>
     <string name="normal">Normal</string>
@@ -79,6 +79,12 @@
     <string name="reviewed">(%1$s reviewed)</string>
     <string name="rate">Rating :</string>
     <string name="rating">rating</string>
+    <string name="rb1">Tidak Yakin</string>
+    <string name="rb2">Kurang Yakin</string>
+    <string name="rb3">Yakin</string>
+    <string name="rb4">Cukup Yakin</string>
+    <string name="rb5">Sangat Yakin</string>
+
     <string-array name="spinner_subcategory">
         <item>Semua subcategory</item>
         <item>Peeling</item>
