@@ -1,13 +1,10 @@
 package com.company.skinnie.data.response
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-data class ResponsePopular(
-
-	@field:SerializedName("ResponsePopular")
-	val responsePopular: List<ResponsePopularItem?>? = null
-)
-
+@Entity(tableName = "wishlistProduct")
 data class ResponsePopularItem(
 
 	@field:SerializedName("suitable_for")
@@ -29,7 +26,7 @@ data class ResponsePopularItem(
 	val rate: String? = null,
 
 	@field:SerializedName("price")
-	val price: Int? = null,
+	val price: String? = null,
 
 	@field:SerializedName("ingredients")
 	val ingredients: String? = null,
@@ -37,6 +34,7 @@ data class ResponsePopularItem(
 	@field:SerializedName("reviewed")
 	val reviewed: Int? = null,
 
+	@PrimaryKey(autoGenerate = false)
 	@field:SerializedName("id")
 	val id: Int? = null,
 

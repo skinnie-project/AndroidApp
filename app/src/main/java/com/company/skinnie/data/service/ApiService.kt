@@ -38,12 +38,12 @@ interface ApiService {
     @GET("predict/recommend")
     fun getRecommendation(
         @Query("predicted") predicted: String,
-    ): Call<List<ResponseRecommend.ResponseRecommendItem>>
+    ): Call<List<ResponsePopularItem>>
 
     @GET("data/detail")
     fun getDetail(
         @Query("id") id: Int,
-    ): Call<List<ResponseDetail>>
+    ): Call<List<ResponsePopularItem>>
 
     @GET("predict/filter")
     fun getFilter(

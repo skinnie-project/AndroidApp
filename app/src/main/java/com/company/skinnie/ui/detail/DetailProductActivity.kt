@@ -1,17 +1,24 @@
 package com.company.skinnie.ui.detail
 
 import android.os.Bundle
-import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.company.skinnie.R
+import com.company.skinnie.data.response.ResponsePopularItem
 import com.company.skinnie.databinding.ActivityDetailProductBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class DetailProductActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailProductBinding
-
     private val viewModel: DetailProductViewModel by viewModels()
+    private var product: ResponsePopularItem? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailProductBinding.inflate(layoutInflater)
@@ -23,10 +30,49 @@ class DetailProductActivity : AppCompatActivity() {
 
         val id = intent.getIntExtra(EXTRA_ID, 0)
 
+        //check wishlist
+        var isWishlist = false
+        CoroutineScope(Dispatchers.IO).launch {
+            val count = viewModel.checkWishlist(id)
+            withContext(Dispatchers.Main){
+                if (count != null) {
+                    if (count > 0) {
+                        //action fab kl di klik
+                        binding.fabFavorit.setImageDrawable(ContextCompat.getDrawable(binding.fabFavorit.context, R.drawable.ic_favorite))
+                        isWishlist = true
+                    } else {
+                        //action fab kl di unclick
+                        binding.fabFavorit.setImageDrawable(ContextCompat.getDrawable(binding.fabFavorit.context, R.drawable.ic_baseline_favorite_border_24))
+                        isWishlist = false
+                    }
+                }
+            }
+        }
+
+        binding.fabFavorit.setOnClickListener {
+            isWishlist = !isWishlist
+            if (isWishlist) {
+                if (product != null) {
+                    viewModel.addWishlist(product!!)
+                    Toast.makeText(this, "Ditambahkan ke wishlist", Toast.LENGTH_SHORT).show()
+                    binding.fabFavorit.setImageDrawable(ContextCompat.getDrawable(binding.fabFavorit.context, R.drawable.ic_favorite))
+                }
+            } else {
+                if (product != null) {
+                    viewModel.deleteWishlist(product?.id!!)
+                    Toast.makeText(this, "Dihapus dari wishlist", Toast.LENGTH_SHORT).show()
+                    binding.fabFavorit.setImageDrawable(ContextCompat.getDrawable(binding.fabFavorit.context, R.drawable.ic_baseline_favorite_border_24))
+                }
+
+            }
+        }
+
+
+
         binding.toolbar.setNavigationOnClickListener {
             onBackPressed()
         }
-        binding.loading.visibility = View.VISIBLE
+        binding.loading.visibility = android.view.View.VISIBLE
         getProduct(id)
 
     }
@@ -34,23 +80,28 @@ class DetailProductActivity : AppCompatActivity() {
     private fun getProduct(id: Int) {
         viewModel.setDetail(id).observe(this) {
             if (it != null) {
-                binding.loading.visibility = View.GONE
+                product = it
+                binding.loading.visibility = android.view.View.GONE
                 Glide.with(this)
-                    .load(it[0]!!.urlNew)
+                    .load(it.urlNew)
                     .into(binding.ivProduct)
-                binding.tvBrandProduct.text = it[0]!!.brand
-                binding.tvNameProduct.text = it[0]!!.productName
-                binding.tvDescProduct.text = it[0]!!.description
-                if (it[0]!!.price == null){
+                binding.tvBrandProduct.text = it.brand
+                binding.tvNameProduct.text = it.productName
+                binding.tvDescProduct.text = it.description
+                binding.btnPrice.text = it.price.toString()
+                binding.tvIngredient.text = it.ingredients
+                binding.tvTutorial.text = it.howToUse
+                if (it.price == null){
                     binding.btnPrice.text = resources.getString(R.string.dummy_price, "0")
                 }else{
-                    binding.btnPrice.text = resources.getString(R.string.dummy_price, it[0]!!.price.toString())
+                    binding.btnPrice.text = resources.getString(R.string.dummy_price, it.price.toString())
                 }
-                binding.tvIngredient.text = it[0]!!.ingredients
-                binding.tvTutorial.text = it[0]!!.howToUse
-                binding.tvRating.text = it[0]!!.rate
-                binding.tvReviewed.text = resources.getString(R.string.reviewed, it[0]!!.reviewed.toString())
+                binding.tvIngredient.text = it.ingredients
+                binding.tvTutorial.text = it.howToUse
+                binding.tvRating.text = it.rate
+                binding.tvReviewed.text = resources.getString(R.string.reviewed, it.reviewed.toString())
             }
+
         }
     }
 
