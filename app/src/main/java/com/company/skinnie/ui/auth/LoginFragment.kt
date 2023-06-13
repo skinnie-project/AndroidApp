@@ -159,15 +159,16 @@ class LoginFragment : Fragment() {
         // You can get the user's information from the account object
         val displayName = account?.displayName
         val email = account?.email
+        val nickName = account?.givenName
 
-        viewModelGoogle.userGoogle(PayloadGoogle(displayName, displayName, email))
+        viewModelGoogle.userGoogle(PayloadGoogle(displayName, nickName, email))
             .observe(viewLifecycleOwner) {
                 binding.loading.visibility = View.GONE
                 if (it != null && it.status == "success") {
                     val preferences = Preferences(requireContext())
 
                     //buat nyimpan data usernamenya
-                    preferences.setValues("name", displayName!!)
+                    preferences.setValues("name", nickName!!)
 
                     //action to activity
                     startActivity(Intent(requireContext(), NavigationActivity::class.java))
