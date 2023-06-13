@@ -54,7 +54,7 @@
     <string name="ingredient4">Aloe vera</string>
     <string name="title_product">Produk</string>
     <string name="dummy_merek">Skintific</string>
-    <string name="dummy_price">Rp 100.000</string>
+    <string name="dummy_price">Rp %1$s</string>
     <string name="dummy_desc">Skintific 5X Ceramide Barrier Moisture Gel menggabungkan 3 kandungan aktif Ceramide, Hyaluronic Acid, dan Centella Asiatica, untuk mengatasi permasalahan skin barrier yang rusak seperti jerawat, kemerahan, kulit bertekstur, dan juga kulit kering secara cepat namun tetap aman untuk skin barrier. Diperkaya dengan teknolog 5X Ceramide, yang merupakan gabungan 5 jenis Ceramide untuk melembabkan secara mendalam dan memperkuat lapisan kulit. 5X Ceramide ini membantu untuk memperbaiki dan melindungi skin barrier dengan menjaga kelembaban dan melindungi kulit dari faktor eksternal.</string>
     <string name="back">Kembali</string>
     <string name="background">background</string>
@@ -76,6 +76,9 @@
     <string name="icon_favorite">Tambah Favorit</string>
     <string name="list_product">List Produk</string>
     <string name="empty_product">Maaf tidak ada produk yang tersedia</string>
+    <string name="reviewed">(%1$s reviewed)</string>
+    <string name="rate">Rating :</string>
+    <string name="rating">rating</string>
     <string-array name="spinner_subcategory">
         <item>Semua subcategory</item>
         <item>Peeling</item>

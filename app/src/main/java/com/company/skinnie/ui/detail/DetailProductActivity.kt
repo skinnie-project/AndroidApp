@@ -5,6 +5,7 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.company.skinnie.R
 import com.company.skinnie.databinding.ActivityDetailProductBinding
 
 class DetailProductActivity : AppCompatActivity() {
@@ -40,9 +41,15 @@ class DetailProductActivity : AppCompatActivity() {
                 binding.tvBrandProduct.text = it[0]!!.brand
                 binding.tvNameProduct.text = it[0]!!.productName
                 binding.tvDescProduct.text = it[0]!!.description
-                binding.btnPrice.text = it[0]!!.price.toString()
+                if (it[0]!!.price == null){
+                    binding.btnPrice.text = resources.getString(R.string.dummy_price, "0")
+                }else{
+                    binding.btnPrice.text = resources.getString(R.string.dummy_price, it[0]!!.price.toString())
+                }
                 binding.tvIngredient.text = it[0]!!.ingredients
                 binding.tvTutorial.text = it[0]!!.howToUse
+                binding.tvRating.text = it[0]!!.rate
+                binding.tvReviewed.text = resources.getString(R.string.reviewed, it[0]!!.reviewed.toString())
             }
         }
     }

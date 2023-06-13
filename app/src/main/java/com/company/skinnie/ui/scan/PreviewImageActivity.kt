@@ -132,8 +132,9 @@ class PreviewImageActivity : AppCompatActivity() {
                 BitmapFactory.decodeFile(myFile.path),
                 isBackCamera
             )
-            val file = reduceFileImage(result, myFile)
-            getFile = file
+            //val file = reduceFileImage(result, myFile)
+            //getFile = file
+            imagePhoto = reduceFileImage(result, myFile)
             binding.ivPreviewImage.setImageBitmap(result)
         }
     }
