@@ -1,14 +1,15 @@
 package com.company.skinnie.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.company.skinnie.data.response.ResponsePopularItem
-import com.company.skinnie.data.response.ResponseRecommend
 import com.company.skinnie.databinding.ItemRecommendBinding
 
-class RecommendAdapter(val clickListener: (Int) -> Unit) : RecyclerView.Adapter<RecommendAdapter.RecommendViewHolder>() {
+class RecommendAdapter(val clickListener: (Int) -> Unit) :
+    RecyclerView.Adapter<RecommendAdapter.RecommendViewHolder>() {
 
     private val recommends = arrayListOf<ResponsePopularItem?>()
     fun setRecommend(recommendList: List<ResponsePopularItem?>) {
@@ -19,6 +20,7 @@ class RecommendAdapter(val clickListener: (Int) -> Unit) : RecyclerView.Adapter<
 
     inner class RecommendViewHolder(private val binding: ItemRecommendBinding) :
         RecyclerView.ViewHolder(binding.root) {
+        @SuppressLint("SetTextI18n")
         fun bind(recommend: ResponsePopularItem?) {
             binding.apply {
                 if (recommend != null) {
@@ -27,7 +29,11 @@ class RecommendAdapter(val clickListener: (Int) -> Unit) : RecyclerView.Adapter<
                         .into(ivDummyProduct)
                     tvMerekProduct.text = recommend.brand
                     tvDescProduct.text = recommend.description
-                    tvPriceProduct.text = recommend.price
+                    if (recommend.price != null) {
+                        tvPriceProduct.text = "Rp ${recommend.price}"
+                    } else {
+                        tvPriceProduct.text = "Rp 0"
+                    }
                 }
                 itemView.setOnClickListener {
                     clickListener.invoke(recommend!!.id!!)
