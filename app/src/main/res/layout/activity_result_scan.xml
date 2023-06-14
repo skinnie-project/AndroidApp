@@ -80,7 +80,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnYes"
-        android:layout_width="160dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
@@ -95,7 +95,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnNo"
-        android:layout_width="160dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
