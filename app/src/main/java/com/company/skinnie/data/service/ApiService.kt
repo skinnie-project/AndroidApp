@@ -59,4 +59,9 @@ interface ApiService {
     @GET("data/popular")
     fun getPopular(
     ): Call<List<ResponsePopularItem>>
+
+    @GET("data/search")
+    fun getProduct(
+        @Query("product") query: String
+    ): Call<List<ResponsePopularItem>>
 }

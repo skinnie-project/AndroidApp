@@ -32,14 +32,14 @@ data class ResponsePopularItem(
 	val ingredients: String? = null,
 
 	@field:SerializedName("reviewed")
-	val reviewed: Int? = null,
+	val reviewed: String? = null,
 
 	@PrimaryKey(autoGenerate = false)
 	@field:SerializedName("id")
 	val id: Int? = null,
 
 	@field:SerializedName("recom")
-	val recom: Int? = null,
+	val recom: String? = null,
 
 	@field:SerializedName("subcategory")
 	val subcategory: String? = null,
