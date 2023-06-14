@@ -64,4 +64,8 @@ class ResultScanActivity : AppCompatActivity() {
             onBackPressed()
         }
     }
+
+    companion object {
+        const val EXTRA_PREDICT = "extra_predict"
+    }
 }

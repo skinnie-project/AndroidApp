@@ -30,934 +30,934 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/tvTitleInput"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/title_input"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
+            <TextView
+                android:id="@+id/text_question1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="Tidak Berminyak"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleInput" />
 
-                <TextView
-                    android:id="@+id/tvTitleInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="30dp"
-                    android:layout_marginTop="16dp"
-                    android:text="@string/title_input"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <RadioGroup
+                android:id="@+id/Qnormal1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/text_question1"
+                app:layout_constraintTop_toBottomOf="@+id/text_question1">
 
-                <TextView
-                    android:id="@+id/text_question1"
+                <RadioButton
+                    android:id="@+id/radioNormal1_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="24dp"
-                    android:text="Tidak Berminyak"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvTitleInput" />
+                    android:text="@string/rb1" />
 
-                <RadioGroup
-                    android:id="@+id/Qnormal1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="16dp"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/text_question1"
-                    app:layout_constraintTop_toBottomOf="@+id/text_question1">
-
-                    <RadioButton
-                        android:id="@+id/radioNormal1_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb1" />
-
-                    <RadioButton
-                        android:id="@+id/radioNormal1_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb2" />
-
-                    <RadioButton
-                        android:id="@+id/radioNormal1_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb3" />
-
-                    <RadioButton
-                        android:id="@+id/radioNormal1_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb4" />
-
-                    <RadioButton
-                        android:id="@+id/radioNormal1_5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb5" />
-
-                </RadioGroup>
-
-                <TextView
-                    android:id="@+id/text_question2"
+                <RadioButton
+                    android:id="@+id/radioNormal1_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:text="Segar dan halus"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Qnormal1" />
+                    android:text="@string/rb2" />
 
-                <RadioGroup
-                    android:id="@+id/Qnormal2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="8dp"
-                    android:orientation="vertical"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text_question2">
-
-                    <RadioButton
-                        android:id="@+id/radioNormal2_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb1" />
-
-                    <RadioButton
-                        android:id="@+id/radioNormal2_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb2" />
-
-                    <RadioButton
-                        android:id="@+id/radioNormal2_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb3" />
-
-                    <RadioButton
-                        android:id="@+id/radioNormal2_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb4" />
-
-                    <RadioButton
-                        android:id="@+id/radioNormal2_5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb5" />
-
-                </RadioGroup>
-
-                <TextView
-                    android:id="@+id/text_question3"
+                <RadioButton
+                    android:id="@+id/radioNormal1_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:text="Bahan-bahan kosmetik mudah menempel di kulit"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Qnormal2" />
+                    android:text="@string/rb3" />
 
-                <RadioGroup
-                    android:id="@+id/Qnormal3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="8dp"
-                    android:orientation="vertical"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text_question3">
-
-                    <RadioButton
-                        android:id="@+id/radioNormal3_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb1" />
-
-                    <RadioButton
-                        android:id="@+id/radioNormal3_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb2" />
-
-                    <RadioButton
-                        android:id="@+id/radioNormal3_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb3" />
-
-                    <RadioButton
-                        android:id="@+id/radioNormal3_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb4" />
-
-                    <RadioButton
-                        android:id="@+id/radioNormal3_5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb5" />
-
-                </RadioGroup>
-
-                <TextView
-                    android:id="@+id/text_question4"
+                <RadioButton
+                    android:id="@+id/radioNormal1_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:text="Kulit Terlihat Sehat"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Qnormal3" />
+                    android:text="@string/rb4" />
 
-                <RadioGroup
-                    android:id="@+id/Qnormal4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="8dp"
-                    android:orientation="vertical"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text_question4">
-
-                    <RadioButton
-                        android:id="@+id/radioNormal4_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb1" />
-
-                    <RadioButton
-                        android:id="@+id/radioNormal4_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb2" />
-
-                    <RadioButton
-                        android:id="@+id/radioNormal4_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb3" />
-
-                    <RadioButton
-                        android:id="@+id/radioNormal4_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb4" />
-
-                    <RadioButton
-                        android:id="@+id/radioNormal4_5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb5" />
-
-                </RadioGroup>
-
-                <TextView
-                    android:id="@+id/text_question5"
+                <RadioButton
+                    android:id="@+id/radioNormal1_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:text="Tidak Berjerawat"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Qnormal4" />
+                    android:text="@string/rb5" />
 
-                <RadioGroup
-                    android:id="@+id/Qnormal5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="8dp"
-                    android:orientation="vertical"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text_question5">
+            </RadioGroup>
 
-                    <RadioButton
-                        android:id="@+id/radioNormal5_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb1" />
+            <TextView
+                android:id="@+id/text_question2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Segar dan halus"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Qnormal1" />
 
-                    <RadioButton
-                        android:id="@+id/radioNormal5_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb2" />
+            <RadioGroup
+                android:id="@+id/Qnormal2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_question2">
 
-                    <RadioButton
-                        android:id="@+id/radioNormal5_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb3" />
-
-                    <RadioButton
-                        android:id="@+id/radioNormal5_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb4" />
-
-                    <RadioButton
-                        android:id="@+id/radioNormal5_5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb5" />
-
-                </RadioGroup>
-
-                <TextView
-                    android:id="@+id/text_question6"
+                <RadioButton
+                    android:id="@+id/radioNormal2_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:text="Mudah Dalam Memilih Kosmetik"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Qnormal5" />
+                    android:text="@string/rb1" />
 
-                <RadioGroup
-                    android:id="@+id/Qnormal6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="8dp"
-                    android:orientation="vertical"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text_question6">
-
-                    <RadioButton
-                        android:id="@+id/radioNormal6_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb1" />
-
-                    <RadioButton
-                        android:id="@+id/radioNormal6_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb2" />
-
-                    <RadioButton
-                        android:id="@+id/radioNormal6_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb3" />
-
-                    <RadioButton
-                        android:id="@+id/radioNormal6_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb4" />
-
-                    <RadioButton
-                        android:id="@+id/radioNormal6_5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb5" />
-
-                </RadioGroup>
-
-                <TextView
-                    android:id="@+id/text_question7"
+                <RadioButton
+                    android:id="@+id/radioNormal2_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:text="Pori-pori halus"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Qnormal6" />
+                    android:text="@string/rb2" />
 
-                <RadioGroup
-                    android:id="@+id/Qnormal7"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="8dp"
-                    android:orientation="vertical"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text_question7">
-
-                    <RadioButton
-                        android:id="@+id/radioNormal7_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb1" />
-
-                    <RadioButton
-                        android:id="@+id/radioNormal7_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb2" />
-
-                    <RadioButton
-                        android:id="@+id/radioNormal7_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb3" />
-
-                    <RadioButton
-                        android:id="@+id/radioNormal7_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb4" />
-
-                    <RadioButton
-                        android:id="@+id/radioNormal7_5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb5" />
-                </RadioGroup>
-
-                <TextView
-                    android:id="@+id/text_question8"
+                <RadioButton
+                    android:id="@+id/radioNormal2_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:text="Pori-pori kulit besar terutama di area hidung, pipi, dagu"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Qnormal7" />
+                    android:text="@string/rb3" />
 
-                <RadioGroup
-                    android:id="@+id/Qminyak1"
+                <RadioButton
+                    android:id="@+id/radioNormal2_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="8dp"
-                    android:orientation="vertical"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/text_question8">
+                    android:text="@string/rb4" />
 
-                    <RadioButton
-                        android:id="@+id/radioBerminyak1_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb1" />
-
-                    <RadioButton
-                        android:id="@+id/radioBerminyak1_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb2" />
-
-                    <RadioButton
-                        android:id="@+id/radioBerminyak1_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb3" />
-
-                    <RadioButton
-                        android:id="@+id/radioBerminyak1_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb4" />
-
-                    <RadioButton
-                        android:id="@+id/radioBerminyak1_5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb5" />
-                </RadioGroup>
-
-                <TextView
-                    android:id="@+id/text_question9"
+                <RadioButton
+                    android:id="@+id/radioNormal2_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:text="Kulit di bagian wajah terlihat mengkilat"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Qminyak1" />
+                    android:text="@string/rb5" />
 
-                <RadioGroup
-                    android:id="@+id/Qminyak2"
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/text_question3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Bahan-bahan kosmetik mudah menempel di kulit"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Qnormal2" />
+
+            <RadioGroup
+                android:id="@+id/Qnormal3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_question3">
+
+                <RadioButton
+                    android:id="@+id/radioNormal3_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="8dp"
-                    android:orientation="vertical"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text_question9">
+                    android:text="@string/rb1" />
 
-                    <RadioButton
-                        android:id="@+id/radioBerminyak2_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb1" />
-
-                    <RadioButton
-                        android:id="@+id/radioBerminyak2_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb2" />
-
-                    <RadioButton
-                        android:id="@+id/radioBerminyak2_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb3" />
-
-                    <RadioButton
-                        android:id="@+id/radioBerminyak2_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb4" />
-
-                    <RadioButton
-                        android:id="@+id/radioBerminyak2_5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb5" />
-                </RadioGroup>
-
-                <TextView
-                    android:id="@+id/text_question10"
+                <RadioButton
+                    android:id="@+id/radioNormal3_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:text="Sering ditumbuhi jerawat"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Qminyak2" />
+                    android:text="@string/rb2" />
 
-                <RadioGroup
-                    android:id="@+id/Qminyak3"
+                <RadioButton
+                    android:id="@+id/radioNormal3_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="8dp"
-                    android:orientation="vertical"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text_question10">
+                    android:text="@string/rb3" />
 
-                    <RadioButton
-                        android:id="@+id/radioBerminyak3_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb1" />
-
-                    <RadioButton
-                        android:id="@+id/radioBerminyak3_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb2" />
-
-                    <RadioButton
-                        android:id="@+id/radioBerminyak3_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb3" />
-
-                    <RadioButton
-                        android:id="@+id/radioBerminyak3_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb4" />
-
-                    <RadioButton
-                        android:id="@+id/radioBerminyak3_5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb5" />
-                </RadioGroup>
-
-                <TextView
-                    android:id="@+id/text_question11"
+                <RadioButton
+                    android:id="@+id/radioNormal3_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:text="Kadang berjerawat"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Qminyak3" />
+                    android:text="@string/rb4" />
 
-                <RadioGroup
-                    android:id="@+id/Qminyak4"
+                <RadioButton
+                    android:id="@+id/radioNormal3_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="8dp"
-                    android:orientation="vertical"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text_question11">
+                    android:text="@string/rb5" />
 
-                    <RadioButton
-                        android:id="@+id/radioBerminyak4_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb1" />
+            </RadioGroup>
 
-                    <RadioButton
-                        android:id="@+id/radioBerminyak4_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb2" />
+            <TextView
+                android:id="@+id/text_question4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Kulit Terlihat Sehat"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Qnormal3" />
 
-                    <RadioButton
-                        android:id="@+id/radioBerminyak4_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb3" />
+            <RadioGroup
+                android:id="@+id/Qnormal4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_question4">
 
-                    <RadioButton
-                        android:id="@+id/radioBerminyak4_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb4" />
-
-                    <RadioButton
-                        android:id="@+id/radioBerminyak4_5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb5" />
-                </RadioGroup>
-
-                <TextView
-                    android:id="@+id/text_question12"
+                <RadioButton
+                    android:id="@+id/radioNormal4_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:text="Tidak berminyak"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Qminyak4" />
+                    android:text="@string/rb1" />
 
-                <RadioGroup
-                    android:id="@+id/Qkering1"
+                <RadioButton
+                    android:id="@+id/radioNormal4_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="8dp"
-                    android:orientation="vertical"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text_question12">
+                    android:text="@string/rb2" />
 
-                    <RadioButton
-                        android:id="@+id/radiokering1_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb1" />
-
-                    <RadioButton
-                        android:id="@+id/radioKering1_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb2" />
-
-                    <RadioButton
-                        android:id="@+id/radioKering1_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb3" />
-
-                    <RadioButton
-                        android:id="@+id/radioKering1_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb4" />
-
-                    <RadioButton
-                        android:id="@+id/radioKering1_5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb5" />
-                </RadioGroup>
-
-                <TextView
-                    android:id="@+id/text_question13"
+                <RadioButton
+                    android:id="@+id/radioNormal4_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:text="Tidak berjerawat"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Qkering1" />
+                    android:text="@string/rb3" />
 
-                <RadioGroup
-                    android:id="@+id/Qkering2"
+                <RadioButton
+                    android:id="@+id/radioNormal4_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="8dp"
-                    android:orientation="vertical"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text_question13">
+                    android:text="@string/rb4" />
 
-                    <RadioButton
-                        android:id="@+id/radiokering2_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb1" />
-
-                    <RadioButton
-                        android:id="@+id/radioKering2_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb2" />
-
-                    <RadioButton
-                        android:id="@+id/radioKering2_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb3" />
-
-                    <RadioButton
-                        android:id="@+id/radioKering2_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb4" />
-
-                    <RadioButton
-                        android:id="@+id/radioKering2_5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb5" />
-                </RadioGroup>
-
-                <TextView
-                    android:id="@+id/text_question14"
+                <RadioButton
+                    android:id="@+id/radioNormal4_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:text="Kulit kelihatan kering sekali"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Qkering2" />
+                    android:text="@string/rb5" />
 
-                <RadioGroup
-                    android:id="@+id/Qkering3"
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/text_question5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Tidak Berjerawat"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Qnormal4" />
+
+            <RadioGroup
+                android:id="@+id/Qnormal5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_question5">
+
+                <RadioButton
+                    android:id="@+id/radioNormal5_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="8dp"
-                    android:orientation="vertical"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text_question14">
+                    android:text="@string/rb1" />
 
-                    <RadioButton
-                        android:id="@+id/radiokering3_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb1" />
-
-                    <RadioButton
-                        android:id="@+id/radioKering3_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb2" />
-
-                    <RadioButton
-                        android:id="@+id/radioKering3_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb3" />
-
-                    <RadioButton
-                        android:id="@+id/radioKering3_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb4" />
-
-                    <RadioButton
-                        android:id="@+id/radioKering3_5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb5" />
-                </RadioGroup>
-
-                <TextView
-                    android:id="@+id/text_question15"
+                <RadioButton
+                    android:id="@+id/radioNormal5_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:text="Pori-pori halus"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Qkering3" />
+                    android:text="@string/rb2" />
 
-                <RadioGroup
-                    android:id="@+id/Qkering4"
+                <RadioButton
+                    android:id="@+id/radioNormal5_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="8dp"
-                    android:orientation="vertical"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text_question15">
+                    android:text="@string/rb3" />
 
-                    <RadioButton
-                        android:id="@+id/radiokering4_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb1" />
-
-                    <RadioButton
-                        android:id="@+id/radioKering4_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb2" />
-
-                    <RadioButton
-                        android:id="@+id/radioKering4_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb3" />
-
-                    <RadioButton
-                        android:id="@+id/radioKering4_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb4" />
-
-                    <RadioButton
-                        android:id="@+id/radioKering4_5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb5" />
-                </RadioGroup>
-
-                <TextView
-                    android:id="@+id/text_question16"
+                <RadioButton
+                    android:id="@+id/radioNormal5_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:text="Tekstur kulit wajah tipis"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Qkering4" />
+                    android:text="@string/rb4" />
 
-                <RadioGroup
-                    android:id="@+id/Qkering5"
+                <RadioButton
+                    android:id="@+id/radioNormal5_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="8dp"
-                    android:orientation="vertical"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text_question16">
+                    android:text="@string/rb5" />
 
-                    <RadioButton
-                        android:id="@+id/radiokering5_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb1" />
+            </RadioGroup>
 
-                    <RadioButton
-                        android:id="@+id/radioKering5_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb2" />
+            <TextView
+                android:id="@+id/text_question6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Mudah Dalam Memilih Kosmetik"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Qnormal5" />
 
-                    <RadioButton
-                        android:id="@+id/radioKering5_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb3" />
+            <RadioGroup
+                android:id="@+id/Qnormal6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_question6">
 
-                    <RadioButton
-                        android:id="@+id/radioKering5_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb4" />
-
-                    <RadioButton
-                        android:id="@+id/radioKering5_5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb5" />
-                </RadioGroup>
-
-                <TextView
+                <RadioButton
+                    android:id="@+id/radioNormal6_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hasil"
-                    android:id="@+id/text_result"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btnContinue"/>
+                    android:text="@string/rb1" />
 
-                <TextView
+                <RadioButton
+                    android:id="@+id/radioNormal6_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hasil Normal"
-                    android:id="@+id/text_result_normal"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text_result"/>
+                    android:text="@string/rb2" />
 
-                <TextView
+                <RadioButton
+                    android:id="@+id/radioNormal6_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hasil Berminyak"
-                    android:id="@+id/text_result_berminyak"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text_result_normal"/>
+                    android:text="@string/rb3" />
 
-                <TextView
+                <RadioButton
+                    android:id="@+id/radioNormal6_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hasil Kering"
-                    android:id="@+id/text_result_kering"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text_result_berminyak"/>
+                    android:text="@string/rb4" />
 
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btnContinue"
-                    android:layout_width="160dp"
+                <RadioButton
+                    android:id="@+id/radioNormal6_5"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
-                    android:background="@drawable/bg_button"
-                    android:text="@string/next"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Qkering5" />
+                    android:text="@string/rb5" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </RadioGroup>
 
+            <TextView
+                android:id="@+id/text_question7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Pori-pori halus"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Qnormal6" />
+
+            <RadioGroup
+                android:id="@+id/Qnormal7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_question7">
+
+                <RadioButton
+                    android:id="@+id/radioNormal7_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb1" />
+
+                <RadioButton
+                    android:id="@+id/radioNormal7_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb2" />
+
+                <RadioButton
+                    android:id="@+id/radioNormal7_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb3" />
+
+                <RadioButton
+                    android:id="@+id/radioNormal7_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb4" />
+
+                <RadioButton
+                    android:id="@+id/radioNormal7_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb5" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/text_question8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Pori-pori kulit besar terutama di area hidung, pipi, dagu"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Qnormal7" />
+
+            <RadioGroup
+                android:id="@+id/Qminyak1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_question8">
+
+                <RadioButton
+                    android:id="@+id/radioBerminyak1_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb1" />
+
+                <RadioButton
+                    android:id="@+id/radioBerminyak1_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb2" />
+
+                <RadioButton
+                    android:id="@+id/radioBerminyak1_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb3" />
+
+                <RadioButton
+                    android:id="@+id/radioBerminyak1_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb4" />
+
+                <RadioButton
+                    android:id="@+id/radioBerminyak1_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb5" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/text_question9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Kulit di bagian wajah terlihat mengkilat"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Qminyak1" />
+
+            <RadioGroup
+                android:id="@+id/Qminyak2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_question9">
+
+                <RadioButton
+                    android:id="@+id/radioBerminyak2_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb1" />
+
+                <RadioButton
+                    android:id="@+id/radioBerminyak2_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb2" />
+
+                <RadioButton
+                    android:id="@+id/radioBerminyak2_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb3" />
+
+                <RadioButton
+                    android:id="@+id/radioBerminyak2_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb4" />
+
+                <RadioButton
+                    android:id="@+id/radioBerminyak2_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb5" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/text_question10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Sering ditumbuhi jerawat"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Qminyak2" />
+
+            <RadioGroup
+                android:id="@+id/Qminyak3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_question10">
+
+                <RadioButton
+                    android:id="@+id/radioBerminyak3_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb1" />
+
+                <RadioButton
+                    android:id="@+id/radioBerminyak3_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb2" />
+
+                <RadioButton
+                    android:id="@+id/radioBerminyak3_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb3" />
+
+                <RadioButton
+                    android:id="@+id/radioBerminyak3_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb4" />
+
+                <RadioButton
+                    android:id="@+id/radioBerminyak3_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb5" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/text_question11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Kadang berjerawat"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Qminyak3" />
+
+            <RadioGroup
+                android:id="@+id/Qminyak4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_question11">
+
+                <RadioButton
+                    android:id="@+id/radioBerminyak4_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb1" />
+
+                <RadioButton
+                    android:id="@+id/radioBerminyak4_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb2" />
+
+                <RadioButton
+                    android:id="@+id/radioBerminyak4_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb3" />
+
+                <RadioButton
+                    android:id="@+id/radioBerminyak4_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb4" />
+
+                <RadioButton
+                    android:id="@+id/radioBerminyak4_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb5" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/text_question12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="Tidak berminyak"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Qminyak4" />
+
+            <RadioGroup
+                android:id="@+id/Qkering1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_question12">
+
+                <RadioButton
+                    android:id="@+id/radiokering1_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb1" />
+
+                <RadioButton
+                    android:id="@+id/radioKering1_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb2" />
+
+                <RadioButton
+                    android:id="@+id/radioKering1_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb3" />
+
+                <RadioButton
+                    android:id="@+id/radioKering1_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb4" />
+
+                <RadioButton
+                    android:id="@+id/radioKering1_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb5" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/text_question13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/tidak_berjerawat"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Qkering1" />
+
+            <RadioGroup
+                android:id="@+id/Qkering2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_question13">
+
+                <RadioButton
+                    android:id="@+id/radiokering2_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb1" />
+
+                <RadioButton
+                    android:id="@+id/radioKering2_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb2" />
+
+                <RadioButton
+                    android:id="@+id/radioKering2_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb3" />
+
+                <RadioButton
+                    android:id="@+id/radioKering2_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb4" />
+
+                <RadioButton
+                    android:id="@+id/radioKering2_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb5" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/text_question14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/kulit_kelihatan_kering_sekali"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Qkering2" />
+
+            <RadioGroup
+                android:id="@+id/Qkering3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_question14">
+
+                <RadioButton
+                    android:id="@+id/radiokering3_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb1" />
+
+                <RadioButton
+                    android:id="@+id/radioKering3_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb2" />
+
+                <RadioButton
+                    android:id="@+id/radioKering3_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb3" />
+
+                <RadioButton
+                    android:id="@+id/radioKering3_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb4" />
+
+                <RadioButton
+                    android:id="@+id/radioKering3_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb5" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/text_question15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/pori_pori_halus"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Qkering3" />
+
+            <RadioGroup
+                android:id="@+id/Qkering4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_question15">
+
+                <RadioButton
+                    android:id="@+id/radiokering4_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb1" />
+
+                <RadioButton
+                    android:id="@+id/radioKering4_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb2" />
+
+                <RadioButton
+                    android:id="@+id/radioKering4_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb3" />
+
+                <RadioButton
+                    android:id="@+id/radioKering4_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb4" />
+
+                <RadioButton
+                    android:id="@+id/radioKering4_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb5" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/text_question16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/tekstur_kulit_wajah_tipis"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Qkering4" />
+
+            <RadioGroup
+                android:id="@+id/Qkering5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_question16">
+
+                <RadioButton
+                    android:id="@+id/radiokering5_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb1" />
+
+                <RadioButton
+                    android:id="@+id/radioKering5_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb2" />
+
+                <RadioButton
+                    android:id="@+id/radioKering5_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb3" />
+
+                <RadioButton
+                    android:id="@+id/radioKering5_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb4" />
+
+                <RadioButton
+                    android:id="@+id/radioKering5_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb5" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/text_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hasil"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnContinue" />
+
+            <TextView
+                android:id="@+id/text_result_normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hasil_normal"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_result" />
+
+            <TextView
+                android:id="@+id/text_result_berminyak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hasil_berminyak"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_result_normal" />
+
+            <TextView
+                android:id="@+id/text_result_kering"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hasil_kering"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_result_berminyak" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnContinue"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/bg_button"
+                android:text="@string/next"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Qkering5" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
