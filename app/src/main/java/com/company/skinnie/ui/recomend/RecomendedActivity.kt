@@ -2,6 +2,7 @@ package com.company.skinnie.ui.recomend
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -48,8 +49,8 @@ class RecomendedActivity : AppCompatActivity() {
         }
 
         binding.rvRecommend.apply {
-            adapter = recommendAdapter
             layoutManager = LinearLayoutManager(this@RecomendedActivity)
+            adapter = recommendAdapter
         }
 
         val subcategory = "Semua subcategory"
@@ -83,12 +84,14 @@ class RecomendedActivity : AppCompatActivity() {
     }
 
     private fun getData(query: String) {
-        viewModel.setPredict(query).observe(this) {
+        Log.d("zzzz", query)
+        viewModel.predict.observe(this) {
             binding.loading.visibility = View.GONE
             if (it != null) {
                 recommendAdapter.setRecommend(it)
             }
         }
+        viewModel.setPredict(query)
 
     }
 

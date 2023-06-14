@@ -72,6 +72,10 @@ class HomeFragment : Fragment(), ArticleAdapter.ArticleListener, PopularAdapter.
             rvArtikel.layoutManager = LinearLayoutManager(activity)
             rvArtikel.setHasFixedSize(true)
             rvArtikel.adapter = adapterArticle
+
+        }
+        binding.searchView.setOnClickListener{
+            startActivity(Intent(requireContext(), SearchActivity::class.java))
         }
 
         binding.tvArticle.setOnClickListener {

@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.company.skinnie.databinding.ActivityManualInputBinding
 import com.company.skinnie.ui.recomend.RecomendedActivity
+import com.company.skinnie.ui.scan.ResultScanActivity
 
 class ManualInputActivity : AppCompatActivity() {
     private lateinit var binding: ActivityManualInputBinding
@@ -25,6 +26,17 @@ class ManualInputActivity : AppCompatActivity() {
         0.6, 0.6, 0.8, 0.6, 0.6 // Gejala kulit kering
     )
 
+    private fun getRbValue(text: String) : Double {
+        return when (text) {
+            "Tidak Yakin" -> 0.0
+            "Kurang Yakin" -> 0.2
+            "Yakin" -> 0.4
+            "Cukup Yakin" -> 0.6
+            "Sangat Yakin" -> 0.8
+            else -> 0.0
+            
+        }
+    }
     private fun calculateNormal() {
         // CF untuk kulit normal //
         // Pertanyaan 1
@@ -32,7 +44,8 @@ class ManualInputActivity : AppCompatActivity() {
         val selectedRadioButtonId1 = binding.Qnormal1.checkedRadioButtonId
         if (selectedRadioButtonId1 != -1) {
             val selectedRadioButton = findViewById<RadioButton>(selectedRadioButtonId1)
-            val selectedValue = selectedRadioButton.text.toString().toDouble()
+//           val selectedValue = getRbValue(selectedRadioButton.text.toString())
+            val selectedValue = getRbValue(selectedRadioButton.text.toString())
             hasil1 = expertWeights[0] * selectedValue
         }
 
@@ -41,7 +54,7 @@ class ManualInputActivity : AppCompatActivity() {
         val selectedRadioButtonId2 = binding.Qnormal2.checkedRadioButtonId
         if (selectedRadioButtonId2 != -1) {
             val selectedRadioButton = findViewById<RadioButton>(selectedRadioButtonId2)
-            val selectedValue = selectedRadioButton.text.toString().toDouble()
+           val selectedValue = getRbValue(selectedRadioButton.text.toString())
             hasil2 = expertWeights[1] * selectedValue
         }
 
@@ -50,7 +63,7 @@ class ManualInputActivity : AppCompatActivity() {
         val selectedRadioButtonId3 = binding.Qnormal3.checkedRadioButtonId
         if (selectedRadioButtonId3 != -1) {
             val selectedRadioButton = findViewById<RadioButton>(selectedRadioButtonId3)
-            val selectedValue = selectedRadioButton.text.toString().toDouble()
+           val selectedValue = getRbValue(selectedRadioButton.text.toString())
             hasil3 = expertWeights[2] * selectedValue
         }
 
@@ -59,7 +72,7 @@ class ManualInputActivity : AppCompatActivity() {
         val selectedRadioButtonId4 =  binding.Qnormal4.checkedRadioButtonId
         if (selectedRadioButtonId4 != -1) {
             val selectedRadioButton = findViewById<RadioButton>(selectedRadioButtonId4)
-            val selectedValue = selectedRadioButton.text.toString().toDouble()
+           val selectedValue = getRbValue(selectedRadioButton.text.toString())
             hasil4 = expertWeights[3] * selectedValue
         }
 
@@ -68,7 +81,7 @@ class ManualInputActivity : AppCompatActivity() {
         val selectedRadioButtonId5 =  binding.Qnormal5.checkedRadioButtonId
         if (selectedRadioButtonId5 != -1) {
             val selectedRadioButton = findViewById<RadioButton>(selectedRadioButtonId5)
-            val selectedValue = selectedRadioButton.text.toString().toDouble()
+           val selectedValue = getRbValue(selectedRadioButton.text.toString())
             hasil5 = expertWeights[4] * selectedValue
         }
 
@@ -77,7 +90,7 @@ class ManualInputActivity : AppCompatActivity() {
         val selectedRadioButtonId6 =  binding.Qnormal6.checkedRadioButtonId
         if (selectedRadioButtonId6 != -1) {
             val selectedRadioButton = findViewById<RadioButton>(selectedRadioButtonId6)
-            val selectedValue = selectedRadioButton.text.toString().toDouble()
+           val selectedValue = getRbValue(selectedRadioButton.text.toString())
             hasil6 = expertWeights[5] * selectedValue
         }
 
@@ -86,7 +99,7 @@ class ManualInputActivity : AppCompatActivity() {
         val selectedRadioButtonId7 =  binding.Qnormal7.checkedRadioButtonId
         if (selectedRadioButtonId7 != -1) {
             val selectedRadioButton = findViewById<RadioButton>(selectedRadioButtonId7)
-            val selectedValue = selectedRadioButton.text.toString().toDouble()
+           val selectedValue = getRbValue(selectedRadioButton.text.toString())
             hasil7 = expertWeights[6] * selectedValue
         }
         val cfCombine1 = hasil1 + hasil2 * (1 - hasil1)
@@ -103,7 +116,7 @@ class ManualInputActivity : AppCompatActivity() {
         val selectedRadioButtonId1 =  binding.Qminyak1.checkedRadioButtonId
         if (selectedRadioButtonId1 != -1) {
             val selectedRadioButton = findViewById<RadioButton>(selectedRadioButtonId1)
-            val selectedValue = selectedRadioButton.text.toString().toDouble()
+           val selectedValue = getRbValue(selectedRadioButton.text.toString())
             hasil1 = expertWeights[7] * selectedValue
         }
 
@@ -112,7 +125,7 @@ class ManualInputActivity : AppCompatActivity() {
         val selectedRadioButtonId2 = binding.Qminyak2.checkedRadioButtonId
         if (selectedRadioButtonId2 != -1) {
             val selectedRadioButton = findViewById<RadioButton>(selectedRadioButtonId2)
-            val selectedValue = selectedRadioButton.text.toString().toDouble()
+           val selectedValue = getRbValue(selectedRadioButton.text.toString())
             hasil2 = expertWeights[8] * selectedValue
         }
 
@@ -121,7 +134,7 @@ class ManualInputActivity : AppCompatActivity() {
         val selectedRadioButtonId3 = binding.Qminyak3.checkedRadioButtonId
         if (selectedRadioButtonId3 != -1) {
             val selectedRadioButton = findViewById<RadioButton>(selectedRadioButtonId3)
-            val selectedValue = selectedRadioButton.text.toString().toDouble()
+           val selectedValue = getRbValue(selectedRadioButton.text.toString())
             hasil3 = expertWeights[9] * selectedValue
         }
 
@@ -130,7 +143,7 @@ class ManualInputActivity : AppCompatActivity() {
         val selectedRadioButtonId4 = binding.Qminyak4.checkedRadioButtonId
         if (selectedRadioButtonId4 != -1) {
             val selectedRadioButton = findViewById<RadioButton>(selectedRadioButtonId4)
-            val selectedValue = selectedRadioButton.text.toString().toDouble()
+           val selectedValue = getRbValue(selectedRadioButton.text.toString())
             hasil4 = expertWeights[10] * selectedValue
         }
         val cfCombine1 = hasil1 + hasil2 * (1 - hasil1)
@@ -144,7 +157,7 @@ class ManualInputActivity : AppCompatActivity() {
         val selectedRadioButtonId1 = binding.Qkering1.checkedRadioButtonId
         if (selectedRadioButtonId1 != -1) {
             val selectedRadioButton = findViewById<RadioButton>(selectedRadioButtonId1)
-            val selectedValue = selectedRadioButton.text.toString().toDouble()
+           val selectedValue = getRbValue(selectedRadioButton.text.toString())
             hasil1 = expertWeights[11] * selectedValue
         }
 
@@ -153,7 +166,7 @@ class ManualInputActivity : AppCompatActivity() {
         val selectedRadioButtonId2 = binding.Qkering2.checkedRadioButtonId
         if (selectedRadioButtonId2 != -1) {
             val selectedRadioButton = findViewById<RadioButton>(selectedRadioButtonId2)
-            val selectedValue = selectedRadioButton.text.toString().toDouble()
+           val selectedValue = getRbValue(selectedRadioButton.text.toString())
             hasil2 = expertWeights[12] * selectedValue
         }
 
@@ -162,7 +175,7 @@ class ManualInputActivity : AppCompatActivity() {
         val selectedRadioButtonId3 = binding.Qkering3.checkedRadioButtonId
         if (selectedRadioButtonId3 != -1) {
             val selectedRadioButton = findViewById<RadioButton>(selectedRadioButtonId3)
-            val selectedValue = selectedRadioButton.text.toString().toDouble()
+           val selectedValue = getRbValue(selectedRadioButton.text.toString())
             hasil3 = expertWeights[13] * selectedValue
         }
 
@@ -171,7 +184,7 @@ class ManualInputActivity : AppCompatActivity() {
         val selectedRadioButtonId4 = binding.Qkering4.checkedRadioButtonId
         if (selectedRadioButtonId4 != -1) {
             val selectedRadioButton = findViewById<RadioButton>(selectedRadioButtonId4)
-            val selectedValue = selectedRadioButton.text.toString().toDouble()
+           val selectedValue = getRbValue(selectedRadioButton.text.toString())
             hasil4 = expertWeights[14] * selectedValue
         }
 
@@ -180,7 +193,7 @@ class ManualInputActivity : AppCompatActivity() {
         val selectedRadioButtonId5 = binding.Qkering5.checkedRadioButtonId
         if (selectedRadioButtonId5 != -1) {
             val selectedRadioButton = findViewById<RadioButton>(selectedRadioButtonId5)
-            val selectedValue = selectedRadioButton.text.toString().toDouble()
+           val selectedValue = getRbValue(selectedRadioButton.text.toString())
             hasil5 = expertWeights[15] * selectedValue
         }
         val cfCombine1 = hasil1 + hasil2 * (1 - hasil1)
@@ -191,29 +204,29 @@ class ManualInputActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun findBiggest() {
-//        val text_result =  findViewById<TextView>(R.id.text_result)
-//        if (cfKulitNormal > cfKulitBerminyak && cfKulitNormal > cfKulitKering) {
-//            text_result.text = "Hasil Akhir: Kulit Normal"
-//        } else if (cfKulitBerminyak > cfKulitNormal && cfKulitBerminyak > cfKulitKering) {
-//            text_result.text = "Hasil Akhir: Kulit Berminyak"
-//        } else if (cfKulitKering > cfKulitNormal && cfKulitKering > cfKulitBerminyak) {
-//            text_result.text = "Hasil Akhir: Kulit Kering"
-//        } else {
-//            text_result.text = "Hasil Akhir: None"
-//        }
+        val text_result = binding.textResult
+        if (cfKulitNormal > cfKulitBerminyak && cfKulitNormal > cfKulitKering) {
+            text_result.text = "Hasil Akhir: Kulit Normal"
+        } else if (cfKulitBerminyak > cfKulitNormal && cfKulitBerminyak > cfKulitKering) {
+            text_result.text = "Hasil Akhir: Kulit Berminyak"
+        } else if (cfKulitKering > cfKulitNormal && cfKulitKering > cfKulitBerminyak) {
+            text_result.text = "Hasil Akhir: Kulit Kering"
+        } else {
+            text_result.text = "Hasil Akhir: None"
+        }
     }
 
     @SuppressLint("SetTextI18n")
     private fun calculateResult() {
-//        val hasilNormal = findViewById<TextView>(R.id.text_result_normal)
-//        val cfKulitNormalString = cfKulitNormal.toString()
-//        hasilNormal.text = "Persentase Kulit Normal: $cfKulitNormalString"
-//        val hasilMinyak = findViewById<TextView>(R.id.text_result_berminyak)
-//        val cfKulitMinyakString = cfKulitBerminyak.toString()
-//        hasilMinyak.text = "Persentase Kulit Minyak: $cfKulitMinyakString"
-//        val hasilKering = findViewById<TextView>(R.id.text_result_kering)
-//        val cfKulitKeringString = cfKulitKering.toString()
-//        hasilKering.text = "Persentase Kulit Kering: $cfKulitKeringString"
+        val hasilNormal = binding.textResultNormal
+        val cfKulitNormalString = cfKulitNormal.toString()
+        hasilNormal.text = "Persentase Kulit Normal: $cfKulitNormalString"
+        val hasilMinyak = binding.textResultBerminyak
+        val cfKulitMinyakString = cfKulitBerminyak.toString()
+        hasilMinyak.text = "Persentase Kulit Minyak: $cfKulitMinyakString"
+        val hasilKering = binding.textResultKering
+        val cfKulitKeringString = cfKulitKering.toString()
+        hasilKering.text = "Persentase Kulit Kering: $cfKulitKeringString"
     }
 
 
@@ -226,13 +239,14 @@ class ManualInputActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        val predict =
+
         binding.toolbar.setNavigationOnClickListener {
             onBackPressed()
         }
 
-
         binding.btnContinue.setOnClickListener {
-            startActivity(Intent(this, RecomendedActivity::class.java))
+//            intent.putExtra(ResultScanActivity.EXTRA_PREDICT, predict)
             calculateNormal()
             calculateMinyak()
             calculateKering()

@@ -19,6 +19,7 @@ class HomeViewModel : ViewModel() {
     private val _article = MutableLiveData<List<ResponseArticleItem>>()
     val article: LiveData<List<ResponseArticleItem>> = _article
 
+
     init {
         setPopular()
         setArticle()
@@ -61,8 +62,10 @@ class HomeViewModel : ViewModel() {
         })
     }
 
+
     companion object{
         private const val TAG = "HomeViewModel"
+
     }
 
 }

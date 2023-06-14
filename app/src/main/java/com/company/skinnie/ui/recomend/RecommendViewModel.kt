@@ -1,18 +1,22 @@
 package com.company.skinnie.ui.recomend
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.company.skinnie.data.response.ResponsePopularItem
-import com.company.skinnie.data.response.ResponseRecommend
 import com.company.skinnie.data.service.ApiConfig.provideRetrofit
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class RecommendViewModel : ViewModel() {
-    fun setPredict(query: String): LiveData<List<ResponsePopularItem?>?> {
-        val mutableLiveData = MutableLiveData<List<ResponsePopularItem?>?>()
+
+    private val _predict = MutableLiveData<List<ResponsePopularItem>>()
+    val predict: LiveData<List<ResponsePopularItem>> = _predict
+
+
+    fun setPredict(query: String){
 
         provideRetrofit().getRecommendation(query).enqueue(object :
             Callback<List<ResponsePopularItem>> {
@@ -20,8 +24,9 @@ class RecommendViewModel : ViewModel() {
                 call: Call<List<ResponsePopularItem>>,
                 response: Response<List<ResponsePopularItem>>
             ) {
+                Log.d("TAG", "onResponse: ${response.body()?.size}")
                 if (response.isSuccessful) {
-                    mutableLiveData.value = response.body()
+                    _predict.postValue(response.body())
                 }
             }
 
@@ -29,9 +34,8 @@ class RecommendViewModel : ViewModel() {
                 call: Call<List<ResponsePopularItem>>,
                 t: Throwable
             ) {
-                mutableLiveData.value = null
+                Log.d("TAG", "onResponse: ${t.message}")
             }
         })
-        return mutableLiveData
     }
 }
