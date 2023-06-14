@@ -84,6 +84,14 @@
     <string name="rb3">Yakin</string>
     <string name="rb4">Cukup Yakin</string>
     <string name="rb5">Sangat Yakin</string>
+    <string name="tidak_berjerawat">Tidak berjerawat</string>
+    <string name="kulit_kelihatan_kering_sekali">Kulit kelihatan kering sekali</string>
+    <string name="pori_pori_halus">Pori-pori halus</string>
+    <string name="tekstur_kulit_wajah_tipis">Tekstur kulit wajah tipis</string>
+    <string name="hasil">Hasil</string>
+    <string name="hasil_normal">Hasil Normal</string>
+    <string name="hasil_berminyak">Hasil Berminyak</string>
+    <string name="hasil_kering">Hasil Kering</string>
 
     <string-array name="spinner_subcategory">
         <item>Semua subcategory</item>

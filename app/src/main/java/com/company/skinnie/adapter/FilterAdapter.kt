@@ -1,5 +1,6 @@
 package com.company.skinnie.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -7,7 +8,8 @@ import com.bumptech.glide.Glide
 import com.company.skinnie.data.response.ResponseFilter
 import com.company.skinnie.databinding.ItemRecommendBinding
 
-class FilterAdapter(val clickListener: (Int) -> Unit) : RecyclerView.Adapter<FilterAdapter.FilterViewHolder>() {
+class FilterAdapter(val clickListener: (Int) -> Unit) :
+    RecyclerView.Adapter<FilterAdapter.FilterViewHolder>() {
     private val filters = arrayListOf<ResponseFilter.ResponseFilterItem?>()
 
     fun setFilter(filterList: List<ResponseFilter.ResponseFilterItem?>) {
@@ -18,6 +20,7 @@ class FilterAdapter(val clickListener: (Int) -> Unit) : RecyclerView.Adapter<Fil
 
     inner class FilterViewHolder(private val binding: ItemRecommendBinding) :
         RecyclerView.ViewHolder(binding.root) {
+        @SuppressLint("SetTextI18n")
         fun bind(filter: ResponseFilter.ResponseFilterItem?) {
             binding.apply {
                 if (filter != null) {
@@ -26,7 +29,11 @@ class FilterAdapter(val clickListener: (Int) -> Unit) : RecyclerView.Adapter<Fil
                         .into(ivDummyProduct)
                     tvMerekProduct.text = filter.brand
                     tvDescProduct.text = filter.description
-                    tvPriceProduct.text = filter.price.toString()
+                    if (filter.price != null) {
+                        tvPriceProduct.text = "Rp ${filter.price}"
+                    } else {
+                        tvPriceProduct.text = "Rp 0"
+                    }
                 }
                 itemView.setOnClickListener {
                     clickListener.invoke(filter!!.id!!)
