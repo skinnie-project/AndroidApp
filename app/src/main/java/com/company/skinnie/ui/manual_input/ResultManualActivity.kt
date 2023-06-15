@@ -1,29 +1,30 @@
-package com.company.skinnie.ui.scan
+package com.company.skinnie.ui.manual_input
 
-import android.annotation.SuppressLint
 import android.content.Intent
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import com.company.skinnie.Preferences
 import com.company.skinnie.R
-import com.company.skinnie.databinding.ActivityResultScanBinding
+import com.company.skinnie.databinding.ActivityResultManualBinding
 import com.company.skinnie.ui.recomend.RecomendedActivity
+import com.company.skinnie.ui.scan.BottomSheet
+import com.company.skinnie.ui.scan.InstructionActivity
+import com.company.skinnie.ui.scan.PreviewImageActivity
 
-class ResultScanActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityResultScanBinding
+class ResultManualActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityResultManualBinding
 
-    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityResultScanBinding.inflate(layoutInflater)
+        binding = ActivityResultManualBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //value getPreferences
-        val predict = Preferences(this).getValues("predict")
+        val predict = intent.getStringExtra(EXTRA_PREDICT)
         val ingredient1 = Preferences(this).getValues("ingredient1")
         val ingredient2 = Preferences(this).getValues("ingredient2")
         val ingredient3 = Preferences(this).getValues("ingredient3")
         val ingredient4 = Preferences(this).getValues("ingredient4")
+
 
         when (predict) {
             "Berminyak" -> {
@@ -66,4 +67,7 @@ class ResultScanActivity : AppCompatActivity() {
         }
     }
 
+    companion object {
+        const val EXTRA_PREDICT = "extra_predict"
+    }
 }
