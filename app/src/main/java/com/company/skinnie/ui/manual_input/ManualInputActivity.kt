@@ -3,6 +3,7 @@ package com.company.skinnie.ui.manual_input
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.RadioButton
 import androidx.appcompat.app.AppCompatActivity
 import com.company.skinnie.databinding.ActivityManualInputBinding
@@ -247,9 +248,11 @@ class ManualInputActivity : AppCompatActivity() {
             calculateKering()
             calculateResult()
             findBiggest()
-            val intent = Intent(this, ResultScanActivity::class.java)
-            intent.putExtra(ResultScanActivity.EXTRA_PREDICT, findBiggest())
+            val intent = Intent(this, ResultManualActivity::class.java)
+            intent.putExtra(ResultManualActivity.EXTRA_PREDICT, findBiggest())
+            Log.d("TAG", "onCreate: ${findBiggest()}")
             startActivity(intent)
+            finish()
         }
     }
 }

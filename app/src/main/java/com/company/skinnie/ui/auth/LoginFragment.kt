@@ -160,6 +160,7 @@ class LoginFragment : Fragment() {
         val displayName = account?.displayName
         val email = account?.email
         val nickName = account?.givenName
+        val fullName = account?.displayName
 
         viewModelGoogle.userGoogle(PayloadGoogle(displayName, nickName, email))
             .observe(viewLifecycleOwner) {
@@ -169,6 +170,7 @@ class LoginFragment : Fragment() {
 
                     //buat nyimpan data usernamenya
                     preferences.setValues("name", nickName!!)
+                    preferences.setValues("fullname", fullName!!)
 
                     //action to activity
                     startActivity(Intent(requireContext(), NavigationActivity::class.java))

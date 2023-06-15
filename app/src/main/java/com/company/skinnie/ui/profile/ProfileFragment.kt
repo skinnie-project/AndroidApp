@@ -33,9 +33,9 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         //value getPreferences
-        val name = Preferences(requireContext()).getValues("name")
+        val fullname = Preferences(requireContext()).getValues("fullname")
 
-        binding.tvNameUser.text = name
+        binding.tvNameUser.text = fullname
 
         binding.cvKeluar.setOnClickListener {
             Preferences(requireContext()).clearValues()
