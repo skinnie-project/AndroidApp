@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.RadioButton
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.company.skinnie.databinding.ActivityManualInputBinding
 
@@ -243,6 +244,72 @@ class ManualInputActivity : AppCompatActivity() {
         }
 
         binding.btnContinue.setOnClickListener {
+            when {
+                binding.Qnormal1.checkedRadioButtonId == -1 -> {
+                    Toast.makeText(this, "Pertanyaan 1 belum dijawab", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                binding.Qnormal2.checkedRadioButtonId == -1 -> {
+                    Toast.makeText(this, "Pertanyaan 2 belum dijawab", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                binding.Qnormal3.checkedRadioButtonId == -1 -> {
+                    Toast.makeText(this, "Pertanyaan 3 belum dijawab", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                binding.Qnormal4.checkedRadioButtonId == -1 -> {
+                    Toast.makeText(this, "Pertanyaan 4 belum dijawab", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                binding.Qnormal5.checkedRadioButtonId == -1 -> {
+                    Toast.makeText(this, "Pertanyaan 5 belum dijawab", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                binding.Qnormal6.checkedRadioButtonId == -1 -> {
+                    Toast.makeText(this, "Pertanyaan 6 belum dijawab", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                binding.Qnormal7.checkedRadioButtonId == -1 -> {
+                    Toast.makeText(this, "Pertanyaan 7 belum dijawab", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                binding.Qminyak1.checkedRadioButtonId == -1 -> {
+                    Toast.makeText(this, "Pertanyaan 8 belum dijawab", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                binding.Qminyak2.checkedRadioButtonId == -1 -> {
+                    Toast.makeText(this, "Pertanyaan 9 belum dijawab", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                binding.Qminyak3.checkedRadioButtonId == -1 -> {
+                    Toast.makeText(this, "Pertanyaan 10 belum dijawab", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                binding.Qminyak4.checkedRadioButtonId == -1 -> {
+                    Toast.makeText(this, "Pertanyaan 11 belum dijawab", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                binding.Qkering1.checkedRadioButtonId == -1 -> {
+                    Toast.makeText(this, "Pertanyaan 12 belum dijawab", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                binding.Qkering2.checkedRadioButtonId == -1 -> {
+                    Toast.makeText(this, "Pertanyaan 13 belum dijawab", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                binding.Qkering3.checkedRadioButtonId == -1 -> {
+                    Toast.makeText(this, "Pertanyaan 14 belum dijawab", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                binding.Qkering4.checkedRadioButtonId == -1 -> {
+                    Toast.makeText(this, "Pertanyaan 15 belum dijawab", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                binding.Qkering5.checkedRadioButtonId == -1 -> {
+                    Toast.makeText(this, "Pertanyaan 16 belum dijawab", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+            }
             calculateNormal()
             calculateMinyak()
             calculateKering()

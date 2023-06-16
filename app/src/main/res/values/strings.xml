@@ -81,8 +81,8 @@
     <string name="rating">rating</string>
     <string name="rb1">Tidak Yakin</string>
     <string name="rb2">Kurang Yakin</string>
-    <string name="rb3">Yakin</string>
-    <string name="rb4">Cukup Yakin</string>
+    <string name="rb3">Cukup Yakin</string>
+    <string name="rb4">Yakin</string>
     <string name="rb5">Sangat Yakin</string>
     <string name="tidak_berjerawat">Tidak berjerawat</string>
     <string name="kulit_kelihatan_kering_sekali">Kulit kelihatan kering sekali</string>
