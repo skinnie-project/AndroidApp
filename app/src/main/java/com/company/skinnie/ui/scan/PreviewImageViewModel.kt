@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.company.skinnie.data.response.ResponseScan
 import com.company.skinnie.data.service.ApiConfig
+import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
@@ -21,7 +22,7 @@ class PreviewImageViewModel: ViewModel() {
         val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
             "image",
             photo.name,
-            photo.asRequestBody("image/jpeg".toMediaTypeOrNull()),
+            photo.asRequestBody("image/jpeg".toMediaType()),
         )
 
         ApiConfig.provideRetrofit().postImage(imageMultipart, filename.toRequestBody())
