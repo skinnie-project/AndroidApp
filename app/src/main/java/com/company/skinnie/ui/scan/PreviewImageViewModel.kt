@@ -4,8 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.company.skinnie.data.response.ResponseScan
-import com.company.skinnie.data.service.ApiConfig
-import okhttp3.MediaType.Companion.toMediaType
+import com.company.skinnie.data.service.ApiConfig.provideRetrofit
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
@@ -15,7 +14,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.io.File
 
-class PreviewImageViewModel: ViewModel() {
+class PreviewImageViewModel : ViewModel() {
     fun uploadImage(photo: File, filename: String): LiveData<ResponseScan?> {
         val mutableLiveData = MutableLiveData<ResponseScan?>()
 
@@ -25,7 +24,7 @@ class PreviewImageViewModel: ViewModel() {
             photo.asRequestBody("image/jpeg".toMediaType()),
         )
 
-        ApiConfig.provideRetrofit().postImage(imageMultipart, filename.toRequestBody())
+        provideRetrofit().postImage(imageMultipart, filename.toRequestBody())
             .enqueue(object : Callback<ResponseScan> {
                 override fun onResponse(
                     call: Call<ResponseScan>,

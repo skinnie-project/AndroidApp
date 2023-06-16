@@ -160,6 +160,5 @@ class PreviewImageActivity : AppCompatActivity() {
         const val CAMERA_X_RESULT = 200
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
         private const val REQUEST_CODE_PERMISSIONS = 10
-        const val EXTRA_PREDICT = "extra_predict"
     }
 }
