@@ -45,10 +45,6 @@ class ProfileFragment : Fragment() {
             activity?.finish()
         }
 
-//        binding.toolbar3.setNavigationOnClickListener {
-////            onBackPressed()
-//        }
-
         binding.cvFavorite.setOnClickListener {
             startActivity(Intent(requireContext(), WishlistActivity::class.java))
         }

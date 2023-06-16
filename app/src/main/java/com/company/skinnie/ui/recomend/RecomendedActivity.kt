@@ -78,19 +78,23 @@ class RecomendedActivity : AppCompatActivity() {
         val subcategory = "Semua subcategory"
 
         binding.tvIngredient1.setOnClickListener {
-            goToFilterActivity(ingredient1, predict, subcategory)
+            val ingredient = binding.tvIngredient1.text.toString()
+            goToFilterActivity(ingredient, predict, subcategory)
         }
 
         binding.tvIngredient2.setOnClickListener {
-            goToFilterActivity(ingredient2, predict, subcategory)
+            val ingredient = binding.tvIngredient2.text.toString()
+            goToFilterActivity(ingredient, predict, subcategory)
         }
 
         binding.tvIngredient3.setOnClickListener {
-            goToFilterActivity(ingredient3, predict, subcategory)
+            val ingredient = binding.tvIngredient3.text.toString()
+            goToFilterActivity(ingredient, predict, subcategory)
         }
 
         binding.tvIngredient4.setOnClickListener {
-            goToFilterActivity(ingredient4, predict, subcategory)
+            val ingredient = binding.tvIngredient4.text.toString()
+            goToFilterActivity(ingredient, predict, subcategory)
         }
 
         binding.loading.visibility = View.VISIBLE
