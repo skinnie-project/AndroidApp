@@ -33,10 +33,10 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         //value getPreferences
-        val name = Preferences(requireContext()).getValues("name")
+        val fullName = Preferences(requireContext()).getValues("fullname")
         val skinType = Preferences(requireContext()).getValues("predict")
 
-        binding.tvNameUser.text = name
+        binding.tvNameUser.text = fullName
         binding.tvUserSkin.text = skinType
 
         binding.cvKeluar.setOnClickListener {
@@ -44,10 +44,6 @@ class ProfileFragment : Fragment() {
             startActivity(Intent(requireContext(), AuthActivity::class.java))
             activity?.finish()
         }
-
-//        binding.toolbar3.setNavigationOnClickListener {
-////            onBackPressed()
-//        }
 
         binding.cvFavorite.setOnClickListener {
             startActivity(Intent(requireContext(), WishlistActivity::class.java))
