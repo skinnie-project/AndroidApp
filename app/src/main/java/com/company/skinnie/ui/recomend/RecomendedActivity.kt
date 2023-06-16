@@ -7,6 +7,7 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.company.skinnie.R
 import com.company.skinnie.adapter.RecommendAdapter
 import com.company.skinnie.databinding.ActivityRecomendedBinding
 import com.company.skinnie.ui.detail.DetailProductActivity
@@ -35,6 +36,27 @@ class RecomendedActivity : AppCompatActivity() {
         binding.tvIngredient2.text = ingredient2
         binding.tvIngredient3.text = ingredient3
         binding.tvIngredient4.text = ingredient4
+
+        when (predict) {
+            "Berminyak" -> {
+                binding.tvIngredient1.text = getString(R.string.ingredient_oily1)
+                binding.tvIngredient2.text = getString(R.string.ingredient_oily2)
+                binding.tvIngredient3.text = getString(R.string.ingredient_oily3)
+                binding.tvIngredient4.text = getString(R.string.ingredient_oily4)
+            }
+            "Normal" -> {
+                binding.tvIngredient1.text = getString(R.string.ingredient_normal1)
+                binding.tvIngredient2.text = getString(R.string.ingredient_normal2)
+                binding.tvIngredient3.text = getString(R.string.ingredient_normal3)
+                binding.tvIngredient4.text = getString(R.string.ingredient_normal4)
+            }
+            else -> {
+                binding.tvIngredient1.text = getString(R.string.ingredient_dry1)
+                binding.tvIngredient2.text = getString(R.string.ingredient_dry2)
+                binding.tvIngredient3.text = getString(R.string.ingredient_dry3)
+                binding.tvIngredient4.text = getString(R.string.ingredient_dry4)
+            }
+        }
 
         binding.tvRecomended.text = predict
 

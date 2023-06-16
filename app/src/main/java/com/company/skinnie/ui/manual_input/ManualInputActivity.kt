@@ -7,7 +7,6 @@ import android.util.Log
 import android.widget.RadioButton
 import androidx.appcompat.app.AppCompatActivity
 import com.company.skinnie.databinding.ActivityManualInputBinding
-import com.company.skinnie.ui.scan.ResultScanActivity
 
 class ManualInputActivity : AppCompatActivity() {
     private lateinit var binding: ActivityManualInputBinding
@@ -209,6 +208,7 @@ class ManualInputActivity : AppCompatActivity() {
             text_result.text = "Berminyak"
         } else if (cfKulitKering > cfKulitNormal && cfKulitKering > cfKulitBerminyak) {
             text_result.text = "Kering"
+
         } else {
             text_result.text = "Null"
         }

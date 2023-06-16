@@ -92,6 +92,18 @@
     <string name="hasil_normal">Hasil Normal</string>
     <string name="hasil_berminyak">Hasil Berminyak</string>
     <string name="hasil_kering">Hasil Kering</string>
+    <string name="ingredient_oily1">Niacinamide</string>
+    <string name="ingredient_oily2">Salicylic Acid</string>
+    <string name="ingredient_oily3">Hyaluronic Acid</string>
+    <string name="ingredient_oily4">Glycolic Acid</string>
+    <string name="ingredient_normal1">Niacinamide</string>
+    <string name="ingredient_normal2">Lactic Acid</string>
+    <string name="ingredient_normal3">Hyaluronic Acid</string>
+    <string name="ingredient_normal4">Aloe Vera</string>
+    <string name="ingredient_dry1">Glycerin</string>
+    <string name="ingredient_dry2">Retinol</string>
+    <string name="ingredient_dry3">Lactic Acid</string>
+    <string name="ingredient_dry4">Squalane</string>
 
     <string-array name="spinner_subcategory">
         <item>Semua subcategory</item>
