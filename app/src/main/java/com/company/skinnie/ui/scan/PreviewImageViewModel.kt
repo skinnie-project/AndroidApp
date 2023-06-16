@@ -21,7 +21,7 @@ class PreviewImageViewModel : ViewModel() {
         val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
             "image",
             photo.name,
-            photo.asRequestBody("image/jpeg".toMediaTypeOrNull()),
+            photo.asRequestBody("image/jpeg".toMediaType()),
         )
 
         provideRetrofit().postImage(imageMultipart, filename.toRequestBody())

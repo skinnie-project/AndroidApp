@@ -33,7 +33,7 @@
     <string name="result_scan">Hasil Scan</string>
     <string name="title_result">Tipe kulit wajah Anda</string>
     <string name="result">Kulit Berminyak</string>
-    <string name="confirm_result">Apakah tipe kulit Anda sudah benar?</string>
+    <string name="confirm_result">Apakah Anda Puas Dengan Hasilnya?</string>
     <string name="yes">Ya</string>
     <string name="no">Tidak</string>
     <string name="skin_type">Tipe Kulit</string>
@@ -65,7 +65,7 @@
     <string name="or">atau</string>
     <string name="divider">garis pembatas</string>
     <string name="try_again">Coba Lagi</string>
-    <string name="choose">Pilih Tipe Kulit</string>
+    <string name="choose">Isi Kuisioner</string>
     <string name="detail_product">Rincian Produk</string>
     <string name="favorite">Favorite</string>
     <string name="brand_product">-</string>
