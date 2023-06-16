@@ -161,6 +161,7 @@ class LoginFragment : Fragment() {
         val email = account?.email
         val nickName = account?.givenName
         val fullName = account?.displayName
+        val photoUrl = account?.photoUrl
 
         viewModelGoogle.userGoogle(PayloadGoogle(displayName, nickName, email))
             .observe(viewLifecycleOwner) {
@@ -171,6 +172,7 @@ class LoginFragment : Fragment() {
                     //buat nyimpan data usernamenya
                     preferences.setValues("name", nickName!!)
                     preferences.setValues("fullname", fullName!!)
+                    preferences.setValues("photo", photoUrl.toString())
 
                     //action to activity
                     startActivity(Intent(requireContext(), NavigationActivity::class.java))
